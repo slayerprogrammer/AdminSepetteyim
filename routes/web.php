@@ -11,7 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-});
-
+include base_path("routes/backend/routes.php");
