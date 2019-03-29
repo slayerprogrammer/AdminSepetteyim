@@ -17,32 +17,36 @@ class SettingsController extends Controller
     public function update(Request $request)
     {
         $setting = Setting::where("key", $request->key)->update(["value"=>$request->value]);
-        if ($setting)
-        {
+
+        if ($setting){
             return "başarılı";
         }
-            return "hatalı";
+
+        return "hatalı";
     }
 
     public function create(Request $request)
     {
         $setting = new Setting();
+
         $setting->key = $request->key;
         $setting->value = $request->value;
 
         if($setting->save()) {
-            return ["status"=> "success", "message"=>"Yeni ayar kaydedildi."];
+            return ["status" => "success", "title" => "Başarılı", "message" => "Yeni ayar kaydedildi"];
         }
-        return ["status"=> "error", "message"=>"Ayarlar kaydedilemedi."];
 
+        return ["status" => "error", "title" => "Hatalı", "message" => "Yeni ayar kaydedilemedi"];
     }
 
     public function delete(Request $request)
     {
-        $setting = Setting::where ("key",$request->key)->delete();
-        if($setting) {
-            return ["status"=> "success", "message"=>"Silme İşlemi Gerçekleşti."];
+        $setting = Setting::where("key", $request->key)->delete();
+
+        if ($setting){
+            return ["status" => "success", "title" => "Başarılı", "message" => "Ayar silindi"];
         }
-        return ["status"=> "error", "message"=>"Silme İşleminde Bir Hata Oluştu."];
+
+        return ["status" => "error", "title" => "Hatalı", "message" => "Ayar silinemedi"];
     }
 }
