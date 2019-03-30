@@ -1,0 +1,57 @@
+#maske {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}  
+#popup .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:620px;
+  height:570px;
+  display:none;
+  z-index:9999;
+  padding:0px;
+  border-radius: 15px;
+  text-align: center;
+  background-color:#000;
+}
+#popup #dialog {
+  width:800px; 
+  height:auto;
+  padding:0px;
+  background-color:#ffffff;
+  font-family: 'Segoe UI Light', sans-serif;
+  font-size: 15pt;
+}
+ 
+ 
+#popup_icerik{
+font-family: "Segoe UI", sans-serif;
+font-size: 12pt;
+  text-align: left;
+}
+#popupfoot{
+font-family: "Segoe UI", sans-serif;
+font-size: 16pt;
+    padding: 10px 20px;
+}
+#popupfoot a{
+text-decoration: none;
+padding:5px 10px 5px 10px;
+}
+.agree:hover{
+  background-color: #000;
+  color: #FFF;
+}
+.popupoption:hover{
+background-color:#000;
+color: #FFF;
+padding:5px;
+}
+.popupoption2:hover{
+color: black;
+}
