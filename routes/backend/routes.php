@@ -6,6 +6,5 @@ Route::group(["prefix"=>"admin", "as"=>"backend", "namespace" => "Backend"], fun
         Route::post("/update", "SettingsController@update")->name(".update");
         Route::post("/create", "SettingsController@create")->name(".create");
         Route::post("/delete", "SettingsController@delete")->name(".delete");
-
     });
 });

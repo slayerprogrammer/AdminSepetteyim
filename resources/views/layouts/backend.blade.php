@@ -1,98 +1,930 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('title','Sepetteyim Grup Bilişim')</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<link rel="stylesheet" href="{{asset("assets/backend/bower_components/bootstrap/dist/css/bootstrap.min.css")}}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset("assets/backend/bower_components/font-awesome/css/font-awesome.min.css")}}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset("assets/backend/bower_components/Ionicons/css/ionicons.min.css")}}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset("assets/backend/dist/css/AdminLTE.min.css")}}">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="{{asset("assets/backend/dist/css/skins/skin-blue.min.css")}}">
-@stack("customCss")
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+<html lang="en">
 
-  <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-    <!-- Header -->
-    @include('backend.include.header')
+<none>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+        <title>@yield('title','Sepetteyim Grup Bilişim')</title>
+        <link rel="icon" type="image/x-icon" href="{{asset("assets/backend/assets/img/favicon.ico")}}"/>
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="{{asset("assets/backend/assets/css/loader.css")}}" rel="stylesheet" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link href="{{asset("assets/backend/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset("assets/backend/assets/css/plugins.css")}}" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
 
-    <!-- Left-Sidebar -->
-    @include('backend.include.left-sidebar')
-
-    <!-- Left-Sidebar -->
-    @yield('content')
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Anything you want
+        <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+        <link href="{{asset("assets/backend/assets/css/support-chat.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset("assets/backend/plugins/maps/vector/jvector/jquery-jvectormap-2.0.3.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset("assets/backend/assets/css/default-dashboard/style.css")}}" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+        @stack("customCss")
+    </head>
+    <body class="default-sidebar">
+    <div id="eq-loader">
+        <div class="eq-loader-div">
+            <div class="eq-loading dual-loader mx-auto mb-5"></div>
+        </div>
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-  </footer>
 
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
+    <!-- Tab Mobile View Header -->
+    @include('backend.include.header')
+    <!--  END NAVBAR  -->
 
-<!-- REQUIRED JS SCRIPTS -->
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container" id="container">
 
-<!-- jQuery 3 -->
-<script src="{{asset("assets/backend/bower_components/jquery/dist/jquery.min.js")}}"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{asset("assets/backend/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset("assets/backend/dist/js/adminlte.min.js")}}"></script>
+        <div class="overlay"></div>
+        <div class="cs-overlay"></div>
 
-@stack('customJs')
+        <!--  BEGIN SIDEBAR  -->
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
-</body>
+        @include('backend.include.left-sidebar')
+        <!--  END SIDEBAR  -->
+
+        <!--  BEGIN CONTENT PART  -->
+        @yield('content')
+        <!--  END CONTENT PART  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+    <!--  BEGIN CHAT  -->
+    <!--  END CHAT  -->
+
+    <!--  BEGIN FOOTER  -->
+    <footer class="footer-section theme-footer">
+
+        <div class="footer-section-1  sidebar-theme">
+
+        </div>
+
+        <div class="footer-section-2 container-fluid">
+            <div class="row">
+                <div id="toggle-grid" class="col-xl-7 col-md-6 col-sm-6 col-12 text-sm-left text-center">
+                    <ul class="list-inline links ml-sm-5">
+                        <li class="list-inline-item mr-3">
+                            <a href="javascript:void(0);">Home</a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="javascript:void(0);">Blog</a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="javascript:void(0);">About</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void(0);">Buy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-5 col-md-6 col-sm-6 col-12">
+                    <ul class="list-inline mb-0 d-flex justify-content-sm-end justify-content-center mr-sm-3 ml-sm-0 mx-3">
+                        <li class="list-inline-item  mr-3">
+                            <p class="bottom-footer">&#xA9; 2019 <a target="_blank" href="https://www.sepetteyim.com">Sepetteyim Grup Bilişim</a></p>
+                        </li>
+                        <li class="list-inline-item align-self-center">
+                            <div class="scrollTop"><i class="flaticon-up-arrow-fill-1"></i></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--  END FOOTER  -->
+
+    <!--  BEGIN CONTROL SIDEBAR  -->
+    <aside class="control-sidebar control-sidebar-light-color cs-content">
+        <div class="">
+
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <div class="close-sidebar">
+                        <i class="flaticon-close-fill p-3 toggle-control-sidebar"></i>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="usr-info text-center mb-5">
+                        <img alt="admin-profile" src="assets/img/c-14.jpg" class="img-fluid rounded-circle mb-3">
+                        <div class=" mt-2">
+                            <h5 class="usr-name mb-0">Linda Nelson</h5>
+                            <p class="usr-occupation mb-0 mt-1">Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-navigation-section text-center mb-5 mt-3">
+                <ul class="nav nav-tabs nav-justified mx-2">
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#feeds-tab" class="nav-link rounded-circle active show">
+                            <p class="mb-0">Task</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#friends-tab" class="nav-link rounded-circle">
+                            <p class="mb-0">Friends</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#alerts-tab" class="nav-link rounded-circle">
+                            <p class="mb-0">Settings</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+
+                <div id="feeds-tab" class="tab-pane tab-1 fade show active">
+
+                    <div class="tasks">
+
+                        <div class="recent">
+
+                            <div class="d-flex justify-content-between mb-5">
+
+                                <div class="icon">
+                                    <i class="flaticon-clock-1"></i>
+                                </div>
+
+
+                                <div>
+                                    <span class="">Today</span> <span class="notification-count ml-2">12</span>
+                                </div>
+
+                                <div>
+                                    <p class="r-view-all">See all</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-13.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Sean Freeman</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-15.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Laurie Fox</h6>
+                                    <p>comment to your posts.</p>
+                                    <p class="meta-time">13 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+                            <div class="media system-notify">
+                                <i class="flaticon-settings-7  mr-3"></i>
+                                <div class="media-body">
+                                    <h6 class="mb-0">System Notifications</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+
+                            <div class="media mail-notify">
+                                <i class="flaticon-folder-fill-1  mr-3"></i>
+                                <div class="media-body">
+                                    <h6 class="mb-0">Ricky Turner</h6>
+                                    <p>has replied your mails.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="today mt-5">
+
+                            <div class="d-flex justify-content-between mb-5">
+
+                                <div class="icon">
+                                    <i class="flaticon-bell-fill-1"></i>
+                                </div>
+                                <div>
+                                    <span>Yesterday</span> <span class="notification-count ml-2">8</span>
+                                </div>
+
+                                <div>
+                                    <p class="r-view-all">See all</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-7.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Angie Lamb</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-5.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Amy Diaz</h6>
+                                    <p>comment to your posts.</p>
+                                    <p class="meta-time">13 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-7.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Irene Collins</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-9.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Lila Perry</h6>
+                                    <p>has replied your mails.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="task-stats mt-5">
+
+                            <div class="t-s-header mb-5">
+                                <div class="row">
+                                    <div class="col-md-10 text-center">
+                                        <h6><span>Task Statistics</span></h6>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <i class="flaticon-close-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="t-s-body">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                        <div class="d-flex justify-content-between">
+                                            <p>Feature Development</p>
+                                            <p>70%</p>
+                                        </div>
+
+                                        <div class="progress  br-30 mb-4">
+                                            <div class="progress-bar  br-30 bg-secondary" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <p>Uploading files</p>
+                                            <p>30%</p>
+                                        </div>
+
+                                        <div class="progress  br-30 mb-4">
+                                            <div class="progress-bar  br-30 bg-danger" role="progressbar" style="width: 30%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <p>Total Progress</p>
+                                            <p>86%</p>
+                                        </div>
+
+                                        <div class="progress  br-30">
+                                            <div class="progress-bar  br-30 bg-info" role="progressbar" style="width: 86%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="text-center mt-5 mb-5">
+                                    <button class="btn btn-primary btn-rounded mb-5">See all</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="friends-tab" class="tab-pane tab-2 fade">
+
+                    <div class="friends">
+
+                        <div class="recent">
+
+                            <div class="t-s-header mb-5">
+
+                                <div class="row">
+
+                                    <div class="col-md-8 text-center">
+                                        <h6>
+                                            <span>New Activity</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div>
+                                            <p>See all</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <ul class="list-inline text-center mb-5">
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-1.jpg">
+                                    <span class="badge badge-pill badge-new">8</span>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-2.jpg">
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-13.jpg">
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-3.jpg">
+                                    <span class="badge badge-pill badge-new">5</span>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-4.jpg">
+                                </li>
+
+                            </ul>
+
+
+                            <div class="friend-request">
+
+                                <div class="d-flex justify-content-between header mb-5">
+
+                                    <div class="media">
+                                        <i class="flaticon-user-plus mr-3"></i>
+                                        <div class="media-body">
+                                            <h6 class="mt-1">Friend request</h6>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="mb-0 mt-2">See all</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="media">
+                                    <img alt="admin-profile" src="assets/img/c-15.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Kara Young</h6>
+                                        <p>2 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+                                <div class="media mt-2">
+                                    <img alt="admin-profile" src="assets/img/P-2.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Justin Cross</h6>
+                                        <p>5 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+                                <div class="media mt-2">
+                                    <img alt="admin-profile" src="assets/img/c-5.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Amy Diaz</h6>
+                                        <p>7 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+
+                                <div class="media mt-2">
+                                    <img alt="admin-profile" src="assets/img/c-6.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Ernest Reeves</h6>
+                                        <p>10 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="online mt-5">
+
+                            <div class="t-s-header mb-5">
+
+                                <div class="row">
+
+                                    <div class="col-md-8 text-center">
+                                        <h6>
+                                            <span>Online</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div>
+                                            <p class="mb-0 mt-0">See all</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="media d-block d-sm-flex text-sm-left text-center">
+                                <img alt="admin-profile" class="mr-sm-3 mb-sm-0 mb-3" src="assets/img/c-7.jpg">
+                                <div class="media-body mb-4">
+                                    <h6 class="media-heading mt-0"><span class="media-title"> Irene Collins</span><span class="badge badge-info float-sm-right ml-2">9</span></h6>
+                                    <p class="media-text">
+                                        Cras sit amet gravida nulla.
+                                    </p><p class="meta-time">7 mins ago</p>
+                                </div>
+                            </div>
+
+
+                            <div class="media d-block d-sm-flex text-sm-left text-center">
+                                <img alt="admin-profile" class="mr-sm-3 mb-sm-0 mb-3 rounded" src="assets/img/c-8.jpg">
+                                <div class="media-body mb-4">
+                                    <h6 class="media-heading mt-0"><span class="media-title"> Thomas Granger</span><span class="badge badge-secondary float-sm-right ml-2">9</span></h6>
+                                    <p class="media-text">
+                                        Cras sit amet gravida nulla.
+                                    </p><p class="meta-time">13 mins ago</p>
+                                </div>
+                            </div>
+
+
+                            <div class="media d-block d-sm-flex text-sm-left text-center">
+                                <img alt="admin-profile" class="mr-sm-3 mb-sm-0 mb-3 rounded-circle" src="assets/img/c-9.jpg">
+                                <div class="media-body mb-4">
+                                    <h6 class="media-heading mt-0"><span class="media-title"> Grace Roberts</span><span class="badge badge-warning float-sm-right ml-2">9</span></h6>
+                                    <p class="media-text">
+                                        Cras sit amet gravida nulla.
+                                    </p><p class="meta-time">7 mins ago</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="away-stats">
+
+
+                            <div class="t-s-header mb-5 mt-5">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <h6>
+                                            <span>Away</span>
+                                        </h6>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="a-s-media mb-5">
+
+                                <div class="media mb-3">
+                                    <div class="profile-img mr-3">
+                                        <img alt="admin-profile" src="assets/img/profile-16.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Traci Lopez</h6>
+                                    </div>
+                                </div>
+
+                                <div class="media mb-3">
+                                    <div class="profile-img mr-3">
+                                        <img alt="admin-profile" src="assets/img/c-11.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Kristen Beck</h6>
+                                    </div>
+                                </div>
+
+                                <div class="media mb-5">
+                                    <div class="profile-img mr-3">
+                                        <img alt="admin-profile" src="assets/img/c-12.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Keith Foster</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div id="alerts-tab" class="tab-pane tab-3 fade">
+
+                    <div class="settings">
+
+                        <div class="admin-setting">
+
+
+                            <div class="d-flex justify-content-between">
+
+                                <div class="media">
+                                    <i class="flaticon-gear-5 mr-3"></i>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Admin settings</h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="mb-0 mt-2">See all</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3 mt-5">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Show notifications</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Enable auto logout</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Show recent activity</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Chat history</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Users activity</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Orders history</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Show task statistics</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="general-setting mt-5">
+
+
+                            <div class="d-flex justify-content-between mb-5">
+
+                                <div class="media">
+                                    <i class="flaticon-gear-5 mr-3"></i>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">General Settings</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-facebook-logo fb"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-dribbble-bold dribbble"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-linkedin-logo lin"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-twitter-logo tweet"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-behance-logo behance"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <div class="chk-settings mt-5">
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title">Report panel usage</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Show information on any malicious activity
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                            <input type="checkbox" class="new-control-input" checked>
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title">Allow mail redirect</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Redirect mail through exchange server
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                            <input type="checkbox" class="new-control-input">
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Show author name in posts</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Allow the user to show his name in blog posts
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                            <input type="checkbox" class="new-control-input" checked>
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Sync phone when connected to the PC</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Connect smart phone automatically and sync with user profile
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                            <input type="checkbox" class="new-control-input" checked>
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-5 delete-chat mb-5">
+
+                                <div class="media mb-4">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Delete chat history</span>
+                                        </h6>
+                                    </div>
+                                    <i class="del-chat-his flaticon-delete-1 mb-4"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="mt-5 usr-status mb-5">
+
+                                <div class="d-flex justify-content-between mb-5">
+
+                                    <div class="media">
+                                        <i class="flaticon-chat-fill mr-3"></i>
+                                        <div class="media-body">
+                                            <h6 class="mt-2">Status</h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="media mb-2 stats">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Online</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox  mr-1  checkbox-outline-success new-checkbox-rounded">
+                                            <input type="checkbox" class="chb new-control-input">
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="media mb-2 stats">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Offline</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox  mr-1  checkbox-outline-default new-checkbox-rounded">
+                                            <input type="checkbox" class="chb new-control-input">
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="media mb-5 stats">
+                                    <div class="media-body mb-5">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Away</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox  mr-1  checkbox-outline-warning new-checkbox-rounded">
+                                            <input type="checkbox" class="chb new-control-input">
+                                            <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+    <!--  END CONTROL SIDEBAR  -->
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="{{asset("assets/backend/assets/js/libs/jquery-3.1.1.min.js")}}"></script>
+    <script src="{{asset("assets/backend/assets/js/loader.js")}}"></script>
+    <script src="{{asset("assets/backend/bootstrap/js/popper.min.js")}}"></script>
+    <script src="{{asset("assets/backend/bootstrap/js/bootstrap.min.js")}}"></script>
+    <script src="{{asset("assets/backend/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js")}}"></script>
+    <script src="{{asset("assets/backend/assets/js/app.js")}}"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="{{asset("assets/backend/assets/js/custom.js")}}"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="{{asset("assets/backend/plugins/maps/vector/jvector/jquery-jvectormap-2.0.3.min.js")}}"></script>
+    <script src="{{asset("assets/backend/plugins/maps/vector/jvector/worldmap_script/jquery-jvectormap-world-mill-en.js")}}"></script>
+    <script src="{{asset("assets/backend/plugins/calendar/pignose/moment.latest.min.js")}}"></script>
+    <script src="{{asset("assets/backend/plugins/calendar/pignose/pignose.calendar.js")}}"></script>
+    <script src="{{asset("assets/backend/assets/js/support-chat.js")}}"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    @stack('customJs')
+    </body>
+
+    <none>
 </html>
