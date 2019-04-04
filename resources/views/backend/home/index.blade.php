@@ -1,86 +1,102 @@
 @extends("layouts.backend")
 @section("content")
-  <div id="content" class="main-content">
-    <div class="container">
-      <div class="page-header">
-        <div class="page-title">
-          <h3>İçerikler</h3>
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="card bg-white">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <h4 class="mt-1 mb-1">Admin Sayfasına Hoşgeldin!</h4>
+              <button class="btn btn-info d-none d-md-block">Destek Al !</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card border-0 border-radius-2 bg-success">
+            <div class="card-body">
+              <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
+                <div class="icon-rounded-inverse-success icon-rounded-lg">
+                  <i class="mdi mdi-book-open-page-variant"></i>
+                </div>
+                <div class="text-white">
+                  <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Sayfanızdaki Blog Sayısı</p>
+                  <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
+                    <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">20</h3>
+                    <small class="mb-0">Makale</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card border-0 border-radius-2 bg-info">
+            <div class="card-body">
+              <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
+                <div class="icon-rounded-inverse-info icon-rounded-lg">
+                  <i class="mdi mdi-basket"></i>
+                </div>
+                <div class="text-white">
+                  <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Sayfanızdaki Ürün Sayısı</p>
+                  <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
+                    <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">87</h3>
+                    <small class="mb-0">Ürün</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card border-0 border-radius-2 bg-danger">
+            <div class="card-body">
+              <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
+                <div class="icon-rounded-inverse-danger icon-rounded-lg">
+                  <i class="mdi mdi-image-area"></i>
+                </div>
+                <div class="text-white">
+                  <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Resimler</p>
+                  <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
+                    <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">61</h3>
+                    <small class="mb-0">Resim</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card border-0 border-radius-2 bg-warning">
+            <div class="card-body">
+              <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
+                <div class="icon-rounded-inverse-warning icon-rounded-lg">
+                  <i class="mdi mdi-account"></i>
+                </div>
+                <div class="text-white">
+                  <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Kullanıcılar</p>
+                  <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
+                    <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">1</h3>
+                    <small class="mb-0">Kişi</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="row layout-spacing ">
-
-        <div class="col-xl-3 mb-xl-0 col-lg-6 mb-4 col-md-6 col-sm-6">
-          <div class="widget-content-area  data-widgets br-4">
-            <div class="widget  t-sales-widget">
-              <div class="media">
-                <div class="icon ml-2">
-                  <i class="flaticon-line-chart"></i>
-                </div>
-                <div class="media-body text-right">
-                  <p class="widget-text mb-0">Blog</p>
-                  <p class="widget-numeric-value">25</p>
-                </div>
-              </div>
-              <p class="widget-total-stats mt-2">Sayfanızdaki Blog Sayısı</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 mb-xl-0 col-lg-6 mb-4 col-md-6 col-sm-6">
-          <div class="widget-content-area  data-widgets br-4">
-            <div class="widget  t-order-widget">
-              <div class="media">
-                <div class="icon ml-2">
-                  <i class="flaticon-cart-bag"></i>
-                </div>
-                <div class="media-body text-right">
-                  <p class="widget-text mb-0">Ürünler</p>
-                  <p class="widget-numeric-value">17</p>
-                </div>
-              </div>
-              <p class="widget-total-stats mt-2">Sayfanızdaki Ürün Sayısı</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-sm-0 mb-4">
-          <div class="widget-content-area  data-widgets br-4">
-            <div class="widget  t-customer-widget">
-              <div class="media">
-                <div class="icon ml-2">
-                  <i class="flaticon-picture"></i>
-                </div>
-                <div class="media-body text-right">
-                  <p class="widget-text mb-0">Resimler</p>
-                  <p class="widget-numeric-value">51</p>
-                </div>
-              </div>
-              <p class="widget-total-stats mt-2">Sitenizdeki Resim Sayısı</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-
-          <div class="widget-content-area  data-widgets br-4">
-            <div class="widget  t-income-widget">
-              <div class="media">
-                <div class="icon ml-2">
-                  <i class="flaticon-user-11"></i>
-                </div>
-                <div class="media-body text-right">
-                  <p class="widget-text mb-0">Kullanıcılar</p>
-                  <p class="widget-numeric-value">4</p>
-                </div>
-              </div>
-              <p class="widget-total-stats mt-2">Sayfanızda Yetkili Olan Kişi Sayısı                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.sepetteyim.com/" target="_blank">Sepetteyim Grup Bilişim</a>. All rights reserved.</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Siz sadece hayal edin. <i class="mdi mdi-heart text-danger"></i></span>
+      </div>
+    </footer>
+    <!-- partial -->
   </div>
 @endsection
 

@@ -1,38 +1,35 @@
-<header class="tabMobileView header navbar fixed-top d-lg-none">
-  <div class="nav-toggle">
-    <a href="javascript:void(0);" class="nav-link sidebarCollapse" data-placement="bottom">
-      <i class="flaticon-menu-line-2"></i>
-    </a>
-    <a href="/" class=""> <img src="{{asset("assets/backend/assets/img/logo-3.png")}}" class="img-fluid" alt="logo"></a>
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+    <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset("assets/backend/images/logo.svg")}}" alt="logo"></a>
+    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset("assets/backend/images/logo-mini.svg")}}" alt="logo"></a>
   </div>
-  <ul class="nav navbar-nav">
-    <li class="nav-item d-lg-none">
+  <div class="navbar-menu-wrapper d-flex align-items-center">
+    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+      <span class="mdi mdi-menu"></span>
+    </button>
 
-    </li>
-  </ul>
-</header>
-<!-- Tab Mobile View Header -->
+    <ul class="navbar-nav navbar-nav-right">
 
-<!--  BEGIN NAVBAR  -->
-<header class="header navbar fixed-top navbar-expand-sm">
-  <a href="javascript:void(0);" class="sidebarCollapse d-none d-lg-block" data-placement="bottom"><i class="flaticon-menu-line-2"></i></a>
-
-  <ul class="navbar-nav flex-row ml-lg-auto">
-
-    <li class="nav-item dropdown user-profile-dropdown ml-lg-0 mr-lg-2 ml-3 order-lg-0 order-1">
-      <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="flaticon-user-12"></span>
-      </a>
-      <div class="dropdown-menu  position-absolute" aria-labelledby="userProfileDropdown">
-        <a class="dropdown-item" href="user_profile.html">
-          <i class="mr-1 flaticon-user-6"></i> <span>My Profile</span>
+      <li class="nav-item nav-profile dropdown mr-0 mr-sm-2">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+          <img src="{{asset("assets/backend/images/faces/face28.jpg")}}" alt="profile"/>
+          <span class="nav-profile-name">Kullanıcı Adı</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="user_login_1.html">
-          <i class="mr-1 flaticon-power-button"></i> <span>Log Out</span>
-        </a>
-      </div>
-    </li>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <a class="dropdown-item">
+            <i class="mdi mdi-settings text-primary"></i>
+            Profil
+          </a>
+          <a href="pages/samples/login-2.html" class="dropdown-item">
+            <i class="mdi mdi-logout text-primary"></i>
+            Çıkış Yap
+          </a>
+        </div>
+      </li>
 
-  </ul>
-</header>
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+      <span class="mdi mdi-menu"></span>
+    </button>
+  </div>
+</nav>
