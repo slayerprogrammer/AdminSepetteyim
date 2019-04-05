@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Role;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;

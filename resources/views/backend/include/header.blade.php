@@ -13,7 +13,9 @@
       <li class="nav-item nav-profile dropdown mr-0 mr-sm-2">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
           <img src="{{asset("assets/backend/images/faces/face28.jpg")}}" alt="profile"/>
-          <span class="nav-profile-name">Kullanıcı Adı</span>
+          <span class="nav-profile-name">
+            {{Auth::user()->name}}
+          </span>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <a class="dropdown-item">

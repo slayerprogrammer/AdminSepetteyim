@@ -15,4 +15,4 @@ include base_path("routes/backend/routes.php");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

@@ -1,6 +1,6 @@
 <?php
 
-Route::group(["prefix"=>"admin", "as"=>"backend", "namespace" => "Backend"], function (){
+Route::group(["prefix"=>"admin", "as"=>"backend", "namespace" => "Backend", 'middleware'=>['auth','admin']], function (){
     Route::group(["prefix"=>"settings", "as"=>".settings", "namespace" => "Settings"], function (){
         Route::get("/", "SettingsController@show")->name(".show");
         Route::post("/update", "SettingsController@update")->name(".update");
@@ -11,5 +11,5 @@ Route::group(["prefix"=>"admin", "as"=>"backend", "namespace" => "Backend"], fun
 });
 
 Route::group(["prefix"=>"admin", "as"=>"backend", "namespace" => "Backend"], function () {
-    Route::get("/", "AdminController@index");
+    Route::get("/", "AdminController@index")->name(".dashboard");
 });

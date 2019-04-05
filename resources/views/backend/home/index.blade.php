@@ -6,6 +6,12 @@
         <div class="col-md-12 grid-margin">
           <div class="card bg-white">
             <div class="card-body d-flex align-items-center justify-content-between">
+              @if (session('status'))
+                <div class="alert alert-success">
+                  {{ session('status') }}
+                </div>
+              @endif
+              You are logged in!
               <h4 class="mt-1 mb-1">Admin Sayfasına Hoşgeldin!</h4>
               <button class="btn btn-info d-none d-md-block">Destek Al !</button>
             </div>
