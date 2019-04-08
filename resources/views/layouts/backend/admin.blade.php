@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Admin Panel') }}</title>
 
     <!-- Scripts -->
     <link rel="stylesheet" href="{{asset("assets/backend/vendors/iconfonts/mdi/font/css/materialdesignicons.min.css")}}">
