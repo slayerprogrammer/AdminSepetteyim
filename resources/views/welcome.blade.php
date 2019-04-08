@@ -1,5 +1,5 @@
 @extends('layouts.frontend.app')
-
+@section('title','Ana Sayfa')
 @section('content')
     <!-- slider Area Start -->
     <div class="slider-area">
@@ -23,10 +23,10 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider-height">
                             <div class="slide-text">
                                 <div class="cap-title wow bounceInDown" data-wow-duration="0.9s" data-wow-delay="0s">
-                                    <h2 style="color:rgb(0, 0, 0)"><strong>EN İYİSİNİ<br />HAKEDİYORSUN</strong></h2>
+                                    <h2><strong>EN İYİSİNİ<br />HAKEDİYORSUN</strong></h2>
                                 </div>
                                 <div class="cap-shop wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                    <h4 style="color:rgb(0, 0, 0)"><strong>Güven Kuyumculuk Mücevherat</strong><br />Sizler İçin</h4>
+                                    <h4><strong>Güven Kuyumculuk Mücevherat</strong><br />Sizler İçin</h4>
                                 </div>
                             </div>
                         </div>
