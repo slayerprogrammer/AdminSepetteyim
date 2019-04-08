@@ -33,7 +33,7 @@ class PdoSessionHandlerTest extends TestCase
 
     protected function getPersistentSqliteDsn()
     {
-        $this->dbFile = tempnam(sys_get_temp_dir(), 'sf2_sqlite_sessions');
+        $this->dbFile = tempnam(sys_get_temp_dir(), 'sf_sqlite_sessions');
 
         return 'sqlite:'.$this->dbFile;
     }
@@ -136,10 +136,6 @@ class PdoSessionHandlerTest extends TestCase
 
     public function testReadConvertsStreamToString()
     {
-        if (\defined('HHVM_VERSION')) {
-            $this->markTestSkipped('PHPUnit_MockObject cannot mock the PDOStatement class on HHVM. See https://github.com/sebastianbergmann/phpunit-mock-objects/pull/289');
-        }
-
         $pdo = new MockPdo('pgsql');
         $pdo->prepareResult = $this->getMockBuilder('PDOStatement')->getMock();
 
@@ -157,9 +153,6 @@ class PdoSessionHandlerTest extends TestCase
 
     public function testReadLockedConvertsStreamToString()
     {
-        if (\defined('HHVM_VERSION')) {
-            $this->markTestSkipped('PHPUnit_MockObject cannot mock the PDOStatement class on HHVM. See https://github.com/sebastianbergmann/phpunit-mock-objects/pull/289');
-        }
         if (filter_var(ini_get('session.use_strict_mode'), FILTER_VALIDATE_BOOLEAN)) {
             $this->markTestSkipped('Strict mode needs no locking for new sessions.');
         }
@@ -397,7 +390,7 @@ class MockPdo extends \PDO
     public function prepare($statement, $driverOptions = [])
     {
         return \is_callable($this->prepareResult)
-            ? \call_user_func($this->prepareResult, $statement, $driverOptions)
+            ? ($this->prepareResult)($statement, $driverOptions)
             : $this->prepareResult;
     }
 

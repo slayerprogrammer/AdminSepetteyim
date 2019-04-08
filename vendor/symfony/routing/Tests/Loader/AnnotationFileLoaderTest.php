@@ -35,9 +35,6 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
         $this->loader->load(__DIR__.'/../Fixtures/AnnotatedClasses/FooClass.php');
     }
 
-    /**
-     * @requires PHP 5.4
-     */
     public function testLoadTraitWithClassConstant()
     {
         $this->reader->expects($this->never())->method('getClassAnnotation');
@@ -54,9 +51,6 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
         $this->loader->load(__DIR__.'/../Fixtures/OtherAnnotatedClasses/NoStartTagClass.php');
     }
 
-    /**
-     * @requires PHP 5.6
-     */
     public function testLoadVariadic()
     {
         $route = new Route(['path' => '/path/to/{id}']);
@@ -76,6 +70,14 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
         $this->reader->expects($this->never())->method('getMethodAnnotations');
 
         $this->loader->load(__DIR__.'/../Fixtures/OtherAnnotatedClasses/AnonymousClassInTrait.php');
+    }
+
+    public function testLoadAbstractClass()
+    {
+        $this->reader->expects($this->never())->method('getClassAnnotation');
+        $this->reader->expects($this->never())->method('getMethodAnnotations');
+
+        $this->loader->load(__DIR__.'/../Fixtures/AnnotatedClasses/AbstractClass.php');
     }
 
     public function testSupports()

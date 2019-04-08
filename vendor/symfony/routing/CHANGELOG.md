@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+4.2.0
+-----
+
+ * added fallback to cultureless locale for internationalized routes
+
+4.0.0
+-----
+
+ * dropped support for using UTF-8 route patterns without using the `utf8` option
+ * dropped support for using UTF-8 route requirements without using the `utf8` option
+
 3.4.0
 -----
 
@@ -57,7 +68,7 @@ CHANGELOG
 
  * [DEPRECATION] The `ApacheMatcherDumper` and `ApacheUrlMatcher` were deprecated and
    will be removed in Symfony 3.0, since the performance gains were minimal and
-   it's hard to replicate the behaviour of PHP implementation.
+   it's hard to replicate the behavior of PHP implementation.
 
 2.3.0
 -----

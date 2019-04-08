@@ -32,7 +32,7 @@ class AnnotationFileLoader extends FileLoader
     public function __construct(FileLocatorInterface $locator, AnnotationClassLoader $loader)
     {
         if (!\function_exists('token_get_all')) {
-            throw new \RuntimeException('The Tokenizer extension is required for the routing annotation loaders.');
+            throw new \LogicException('The Tokenizer extension is required for the routing annotation loaders.');
         }
 
         parent::__construct($locator);
@@ -56,13 +56,17 @@ class AnnotationFileLoader extends FileLoader
 
         $collection = new RouteCollection();
         if ($class = $this->findClass($path)) {
+            $refl = new \ReflectionClass($class);
+            if ($refl->isAbstract()) {
+                return;
+            }
+
             $collection->addResource(new FileResource($path));
             $collection->addCollection($this->loader->load($class, $type));
         }
-        if (\PHP_VERSION_ID >= 70000) {
-            // PHP 7 memory manager will not release after token_get_all(), see https://bugs.php.net/70098
-            gc_mem_caches();
-        }
+
+        // PHP 7 memory manager will not release after token_get_all(), see https://bugs.php.net/70098
+        gc_mem_caches();
 
         return $collection;
     }

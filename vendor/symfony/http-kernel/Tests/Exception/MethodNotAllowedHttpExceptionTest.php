@@ -12,6 +12,19 @@ class MethodNotAllowedHttpExceptionTest extends HttpExceptionTest
         $this->assertSame(['Allow' => 'GET, PUT'], $exception->getHeaders());
     }
 
+    public function testWithHeaderConstruct()
+    {
+        $headers = [
+            'Cache-Control' => 'public, s-maxage=1200',
+        ];
+
+        $exception = new MethodNotAllowedHttpException(['get'], null, null, null, $headers);
+
+        $headers['Allow'] = 'GET';
+
+        $this->assertSame($headers, $exception->getHeaders());
+    }
+
     /**
      * @dataProvider headerDataProvider
      */

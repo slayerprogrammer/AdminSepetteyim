@@ -18,10 +18,10 @@ class AdminMiddleware
     {
         if(Auth::check() && Auth::user()->role->id ==1)
         {
-        return $next($request);
-        }
-        else {
+            return $next($request);
+        } else{
             return redirect()->route('login');
         }
+
     }
 }

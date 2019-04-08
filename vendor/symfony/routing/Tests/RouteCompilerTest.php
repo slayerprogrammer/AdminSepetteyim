@@ -110,8 +110,8 @@ class RouteCompilerTest extends TestCase
             [
                 'Route with an optional variable as the first segment with requirements',
                 ['/{bar}', ['bar' => 'bar'], ['bar' => '(foo|bar)']],
-                '', '#^/(?P<bar>(foo|bar))?$#sD', ['bar'], [
-                    ['variable', '/', '(foo|bar)', 'bar'],
+                '', '#^/(?P<bar>(?:foo|bar))?$#sD', ['bar'], [
+                    ['variable', '/', '(?:foo|bar)', 'bar'],
                 ],
             ],
 
@@ -146,10 +146,10 @@ class RouteCompilerTest extends TestCase
             [
                 'Route without separator between variables',
                 ['/{w}{x}{y}{z}.{_format}', ['z' => 'default-z', '_format' => 'html'], ['y' => '(y|Y)']],
-                '', '#^/(?P<w>[^/\.]+)(?P<x>[^/\.]+)(?P<y>(y|Y))(?:(?P<z>[^/\.]++)(?:\.(?P<_format>[^/]++))?)?$#sD', ['w', 'x', 'y', 'z', '_format'], [
+                '', '#^/(?P<w>[^/\.]+)(?P<x>[^/\.]+)(?P<y>(?:y|Y))(?:(?P<z>[^/\.]++)(?:\.(?P<_format>[^/]++))?)?$#sD', ['w', 'x', 'y', 'z', '_format'], [
                     ['variable', '.', '[^/]++', '_format'],
                     ['variable', '', '[^/\.]++', 'z'],
-                    ['variable', '', '(y|Y)', 'y'],
+                    ['variable', '', '(?:y|Y)', 'y'],
                     ['variable', '', '[^/\.]+', 'x'],
                     ['variable', '/', '[^/\.]+', 'w'],
                 ],
@@ -184,9 +184,8 @@ class RouteCompilerTest extends TestCase
     }
 
     /**
-     * @group legacy
      * @dataProvider provideCompileImplicitUtf8Data
-     * @expectedDeprecation Using UTF-8 route %s without setting the "utf8" option is deprecated %s.
+     * @expectedException \LogicException
      */
     public function testCompileImplicitUtf8Data($name, $arguments, $prefix, $regex, $variables, $tokens, $deprecationType)
     {
@@ -380,6 +379,26 @@ class RouteCompilerTest extends TestCase
     {
         $route = new Route(sprintf('/{%s}', str_repeat('a', RouteCompiler::VARIABLE_MAXIMUM_LENGTH + 1)));
         $route->compile();
+    }
+
+    /**
+     * @dataProvider provideRemoveCapturingGroup
+     */
+    public function testRemoveCapturingGroup($regex, $requirement)
+    {
+        $route = new Route('/{foo}', [], ['foo' => $requirement]);
+
+        $this->assertSame($regex, $route->compile()->getRegex());
+    }
+
+    public function provideRemoveCapturingGroup()
+    {
+        yield ['#^/(?P<foo>a(?:b|c)(?:d|e)f)$#sD', 'a(b|c)(d|e)f'];
+        yield ['#^/(?P<foo>a\(b\)c)$#sD', 'a\(b\)c'];
+        yield ['#^/(?P<foo>(?:b))$#sD', '(?:b)'];
+        yield ['#^/(?P<foo>(?(b)b))$#sD', '(?(b)b)'];
+        yield ['#^/(?P<foo>(*F))$#sD', '(*F)'];
+        yield ['#^/(?P<foo>(?:(?:foo)))$#sD', '((foo))'];
     }
 }
 
