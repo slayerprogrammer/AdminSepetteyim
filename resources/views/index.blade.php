@@ -1,8 +1,8 @@
-@extends('layouts.frontend.app')
+@extends('layouts.frontend.home')
 @section('title','Ana Sayfa')
 @section('content')
-    <!-- slider Area Start -->
-    <div class="slider-area">
+<!-- slider Area Start -->
+<div class="slider-area">
 
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">
@@ -159,9 +159,8 @@
             </div>
         </div>
     </div>
-    <!-- slider Area End-->
-
-    <!--New Product Area Start-->
+<!-- slider Area End-->
+<!--New Product Area Start-->
     <div class="new-product-area">
         <div class="container">
             <div class="row">

@@ -1,71 +1,53 @@
-@extends('layouts.app')
+@extends('layouts.login.index')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
+    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <div class="auth-form-transparent text-left p-3">
+            <div class="brand-logo">
+                <img src="{{asset("assets/backend/images/logo.jpg")}}" alt="logo">
+            </div>
+            <h4>Tekrar Hoşgeldin!</h4>
+            <h6 class="font-weight-light">Seni Tekrar Görmekten Çok Memnunuz!</h6>
+            <form class="pt-3"  method="POST" action="{{ route('login') }}">
+                <div class="form-group">
+                    @csrf
+                    <label for="exampleInputEmail">{{ __('Kullanıcı Adı') }}</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend bg-transparent">
+                      <span class="input-group-text bg-transparent border-right-0">
+                        <i class="mdi mdi-account-outline text-primary"></i>
+                      </span>
+                        </div>
+                        <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-lg border-left-0" name="email" value="{{ old('email') }}" required autofocus>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword">Şifre</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend bg-transparent">
+                      <span class="input-group-text bg-transparent border-right-0">
+                        <i class="mdi mdi-lock-outline text-primary"></i>
+                      </span>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-lg border-left-0" id="password" placeholder="Şifre" required>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                        @endif
+                    </div>
                 </div>
-            </div>
+
+                <div class="my-3">
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">{{ __('Giriş') }}</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
 @endsection
