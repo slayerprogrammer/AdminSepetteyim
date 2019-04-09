@@ -1,13 +1,13 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/admin">
+            <a class="nav-link" href="{{route('admin.dashboard')}}">
                 <i class="mdi mdi-home menu-icon"></i>
                 <span class="menu-title">Ana Sayfa</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="admin/settings">
+            <a class="nav-link" href="{{route('admin.setting.index')}}">
                 <i class="mdi mdi-palette menu-icon"></i>
                 <span href="settings" class="menu-title">Site Ayarları</span>
 

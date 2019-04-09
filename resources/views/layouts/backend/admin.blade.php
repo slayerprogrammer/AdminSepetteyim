@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Admin Panel') }}</title>
+    <title>{{ config('app.name', 'Admin Panel') }} - @yield('title')</title>
 
     <!-- Scripts -->
     <link rel="stylesheet" href="{{asset("assets/backend/vendors/iconfonts/mdi/font/css/materialdesignicons.min.css")}}">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset("assets/backend/css/vertical-layout-light/style.css")}}">
     <!-- endinject -->
     @stack("customCss")
-    <link rel="shortcut icon" href="{{asset("assets/backend/images/favicon.png")}}>
+    <link rel="shortcut icon" href="{{asset("assets/backend/images/favicon.png")}}">
 </head>
 <body>
 <div class="container-scroller">
@@ -59,6 +59,9 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="{{asset("assets/backend/js/dashboard.js")}}"></script>
+    <script src="{{asset("assets/backend/js/bt-maxLength.js")}}"></script>
+<script src="{{asset("assets/backend/js/file-upload.js")}}"></script>
+
 @stack('customJs')
 <!-- End custom js for this page-->
 </body>
