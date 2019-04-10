@@ -21,7 +21,7 @@
                                     <label class="col-form-label">Description</label>
                                 </div>
                                 <div class="col-lg-8">
-                                    <input class="form-control" maxlength="210" name="description" id="defaultconfig-4"type="text" placeholder="Site Açıklaması..">
+                                    <input class="form-control" maxlength="210" name="description" id="defaultconfig-4" type="text" placeholder="Site Açıklaması.." value="{{$setting->description}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -94,10 +94,7 @@
                                 </div>
                                     <input type="file" name="img[]" class="file-upload-default">
                                 <div class="input-group col-lg-8">
-                                    <input type="slug" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                    </span>
+                                    <input type="file" name="slug">
                                 </div>
                             </div>
                             <button type="submit" value="Submit" class="btn btn-success btn-rounded btn-fw">Kaydet</button>
