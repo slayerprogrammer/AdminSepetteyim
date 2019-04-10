@@ -15,7 +15,7 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $settings=Setting::all();
+        $settings=Setting::first();
         return view('admin.setting.index', compact('settings'));
     }
 
@@ -37,30 +37,35 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasfile('filename'))
-        {
-            $file = $request->file('filename');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/', $name);
+        if($request->hasFile('logo')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('logo')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('logo')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore=uniqid().'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('logo')->storeAs('storage/logo/', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
         }
 
-
-        $setting= new Setting;
-        $setting= $setting->find(1);
+        $setting =  Setting::findOrCreate(1);
         $setting->description=$request->get('description');
         $setting->keyword=$request->get('keyword');
-        $setting->email=$request->get('email');
+        $setting->mail=$request->get('mail');
         $setting->phone=$request->get('phone');
         $setting->fax=$request->get('fax');
         $setting->mobilephone=$request->get('mobilephone');
         $setting->whatsapp=$request->get('whatsapp');
         $setting->facebook=$request->get('facebook');
         $setting->instagram=$request->get('instagram');
-        $setting->filename=$request->get('filename');
-        $setting->slug=$request->get('slug');
+        $setting->logo = $fileNameToStore;
         $setting->save();
 
-        return redirect('admin/dashboard')->with('success', 'Information has been added');
+        return redirect('admin/setting')->with('success', 'Information has been added');
     }
 
     /**
@@ -94,30 +99,7 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if($request->hasfile('filename'))
-        {
-            $file = $request->file('filename');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/', $name);
-        }
-
-       // var_dump($request->all());
-
-        $setting= new Setting;
-        $setting->description=$request->get('description');
-        $setting->keyword=$request->get('keyword');
-        $setting->email=$request->get('email');
-        $setting->phone=$request->get('phone');
-        $setting->fax=$request->get('fax');
-        $setting->mobilephone=$request->get('mobilephone');
-        $setting->whatsapp=$request->get('whatsapp');
-        $setting->facebook=$request->get('facebook');
-        $setting->instagram=$request->get('instagram');
-        $setting->filename=$request->get('filename');
-        $setting->slug=$request->get('slug');
-        $setting->update();
-
-        return redirect('setting')->with('success', 'Information has been updated');
+        //
     }
 
     /**
