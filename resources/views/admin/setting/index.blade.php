@@ -16,6 +16,14 @@
                             <h4 class="card-title">Site Ayarları</h4>
                             <form action="{{route('admin.setting.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Logo Resmi</label>
+                                    </div>
+                                <div class="input-group col-lg-6">
+                                    <img src="/storage/{{$settings->logo}}">
+                                </div>
+                                </div>
                             <div class="form-group row">
                                 <div class="col-lg-3">
                                     <label class="col-form-label">Description</label>
@@ -90,13 +98,11 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg-3">
-                                    <label class="col-form-label">Logo Resmi</label>
+                                    <label class="col-form-label">Logo Yükle</label>
                                 </div>
-                                <div class="input-group col-lg-8">
+                                <div class="input-group col-lg-2">
                                     <input type="file" name="logo">
-                                    <img class="card-img-top" src="{{url('storage/logo/'.$settings->logo)}}" alt="{{$settings->description}}">
                                 </div>
-
                             </div>
                             <button type="submit" value="Submit" class="btn btn-success btn-rounded btn-fw">Kaydet</button>
                             </form>

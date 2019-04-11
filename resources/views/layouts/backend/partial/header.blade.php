@@ -20,13 +20,14 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                     <a class="dropdown-item">
                         <i class="mdi mdi-settings text-primary"></i>
-                        Profil
+                        {{ __('Profil') }}
                     </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        {{ __('Çıkış Yap') }}>
                         <i class="mdi mdi-logout text-primary"></i>
+                        {{ __('Çıkış Yap') }}
+
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf

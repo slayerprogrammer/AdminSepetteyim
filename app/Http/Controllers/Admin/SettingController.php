@@ -47,7 +47,7 @@ class SettingController extends Controller
             // Filename to store
             $fileNameToStore=uniqid().'_'.time().'.'.$extension;
             // Upload Image
-            $path = $request->file('logo')->storeAs('storage/logo/', $fileNameToStore);
+            $path = $request->file('logo')->storeAs('public/logo', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
