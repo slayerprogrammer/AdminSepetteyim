@@ -9,32 +9,33 @@
         </button>
 
         <ul class="navbar-nav navbar-nav-right">
-
             <li class="nav-item nav-profile dropdown mr-0 mr-sm-2">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                     <img src="{{asset("assets/backend/images/faces/face28.jpg")}}" alt="profile"/>
                     <span class="nav-profile-name">
-            {{Auth::user()->name}}
-          </span>
+                        {{Auth::user()->name}}
+                    </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+
                     <a class="dropdown-item">
                         <i class="mdi mdi-settings text-primary"></i>
                         {{ __('Profil') }}
                     </a>
+
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                       document.getElementById('logout-form').submit();">
                         <i class="mdi mdi-logout text-primary"></i>
                         {{ __('Çıkış Yap') }}
-
                     </a>
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
+
                 </div>
             </li>
-
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>

@@ -212,3 +212,4 @@ pdks_db.sql
 /.idea
 /.vscode
 /.vagrant
+/storage

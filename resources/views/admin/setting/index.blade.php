@@ -104,7 +104,7 @@
                                     <input type="file" name="logo">
                                 </div>
                             </div>
-                            <button type="submit" value="Submit" class="btn btn-success btn-rounded btn-fw">Kaydet</button>
+                            <button type="submit" value="Submit" class="btn btn-success btn-rounded btn-fw" onclick="showSwal('success-message')">Kaydet</button>
                             </form>
                         </div>
                     </div>

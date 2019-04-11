@@ -1,4 +1,4 @@
-@extends('layouts.frontend.home')
+@extends('layouts.frontend.partial.blank')
 @section('title','Ana Sayfa')
 @section('content')
 <!-- slider Area Start -->

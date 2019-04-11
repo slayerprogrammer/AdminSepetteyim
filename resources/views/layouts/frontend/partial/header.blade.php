@@ -31,13 +31,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>S
     <div class="header-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-md-1 col-sm-2 col-xs-6">
                     <div class="header-logo">
-                        <a href="index.html">
+                        <a href="/">
                             <img class="logo" src="{{asset("assets/frontend/img/logos.png")}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
                         </a>
                     </div>
@@ -46,12 +46,12 @@
                     <div class="mainmenu text-center">
                         <nav>
                             <ul id="nav">
-                                <li><a href="index.html">Ana Sayfa</a></li>
-                                <li><a href="about.html">Kurumsal</a></li>
-                                <li><a href="altin-mucevherat.html">Altın</a></li>
-                                <li><a href="pirlanta-yuzukler.html">Pırlanta</a></li>
-                                <li><a href="elmas-mucevherat.html">Elmas</a></li>
-                                <li><a href="contact-us.html">İletişim</a></li>
+                                <li><a href="/">Ana Sayfa</a></li>
+                                <li><a href="/about">Kurumsal</a></li>
+                                <li><a href="/gold">Altın</a></li>
+                                <li><a href="/diamond">Pırlanta</a></li>
+                                <li><a href="/diamond-cutter">Elmas</a></li>
+                                <li><a href="/contact">İletişim</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -67,12 +67,12 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="index.html">Ana Sayfa</a></li>
-                                <li><a href="about.html">Kurumsal</a></li>
-                                <li><a href="altin-mucevherat.html">Altın</a></li>
-                                <li><a href="pirlanta-yuzukler.html">Pırlanta</a></li>
-                                <li><a href="elmas-mucevherat.html">Elmas</a></li>
-                                <li><a href="contact-us.html">İletişim</a></li>
+                                <li><a href="/">Ana Sayfa</a></li>
+                                <li><a href="/about">Kurumsal</a></li>
+                                <li><a href="/gold">Altın</a></li>
+                                <li><a href="/diamond">Pırlanta</a></li>
+                                <li><a href="/diamond-cutter">Elmas</a></li>
+                                <li><a href="/contact">İletişim</a></li>
                             </ul>
                         </nav>
                     </div>

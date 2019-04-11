@@ -12,7 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('layouts.frontend.home.index');
+});
+Route::get('/about', function () {
+   return view('layouts.frontend.about.index');
+});
+Route::get('/gold', function () {
+    return view('layouts.frontend.gold.index');
+});
+Route::get('/gold', function () {
+    return view('layouts.frontend.diamond.index');
+});
+Route::get('/gold', function () {
+    return view('layouts.frontend.diamond-cutter.index');
+});
+Route::get('/gold', function () {
+    return view('layouts.frontend.contact.index');
 });
 
 Auth::routes();
@@ -27,6 +42,9 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
 Route::group(['as'=>'author.','prefix'=>'author', 'namespace'=>'Author', 'middleware'=>['auth','author']], function (){
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
 });
+
+
+//Logo resmi için route oluşturuldu. farklı resim eklemeler için de yapılması gerekiyor.
 
 Route::get('storage/{filename}', function ($filename)
 {
