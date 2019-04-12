@@ -1,5 +1,5 @@
 @extends('layouts.frontend.partial.blank')
-@section('title','Hakkımızda')
+@section('title','Altın Ürünleri')
 @section('content')
 
     <!-- Breadcrumbs Area Start -->

@@ -1,5 +1,5 @@
 @extends('layouts.frontend.partial.blank')
-@section('title','Altın Ürünleri')
+@section('title','İletişim')
 @section('content')
     <!-- Map Area Start -->
     <div class="address-info-area">
