@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-    </div>S
+    </div>
     <div class="header-bottom">
         <div class="container">
             <div class="row">

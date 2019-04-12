@@ -37,6 +37,8 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
+        $setting =  Setting::findOrCreate(1);
+
         if($request->hasFile('logo')){
             // Get filename with the extension
             $filenameWithExt = $request->file('logo')->getClientOriginalName();
@@ -48,11 +50,9 @@ class SettingController extends Controller
             $fileNameToStore=uniqid().'_'.time().'.'.$extension;
             // Upload Image
             $path = $request->file('logo')->storeAs('public/logo', $fileNameToStore);
-        } else {
-            $fileNameToStore = 'noimage.jpg';
+            $setting->logo = $fileNameToStore;
         }
 
-        $setting =  Setting::findOrCreate(1);
         $setting->description=$request->get('description');
         $setting->keyword=$request->get('keyword');
         $setting->mail=$request->get('mail');
@@ -62,7 +62,6 @@ class SettingController extends Controller
         $setting->whatsapp=$request->get('whatsapp');
         $setting->facebook=$request->get('facebook');
         $setting->instagram=$request->get('instagram');
-        $setting->logo = $fileNameToStore;
         $setting->save();
 
         return redirect('admin/setting')->with('success', 'Information has been added');

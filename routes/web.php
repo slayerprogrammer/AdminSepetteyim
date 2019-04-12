@@ -2,13 +2,8 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Frontend Routes Start
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', function () {
@@ -20,31 +15,47 @@ Route::get('/about', function () {
 Route::get('/gold', function () {
     return view('layouts.frontend.gold.index');
 });
-Route::get('/gold', function () {
+Route::get('/diamond', function () {
     return view('layouts.frontend.diamond.index');
 });
-Route::get('/gold', function () {
+Route::get('/diamond-cutter', function () {
     return view('layouts.frontend.diamond-cutter.index');
 });
-Route::get('/gold', function () {
+Route::get('/contact', function () {
     return view('layouts.frontend.contact.index');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Frontend Routes End
+|--------------------------------------------------------------------------
+*/
+
+/* Admin Route*/
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
+/*
+|--------------------------------------------------------------------------
+| Admin Routes Start
+|--------------------------------------------------------------------------
+*/
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','admin']], function (){
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
     Route::resource('setting','SettingController');
 });
 
-Route::group(['as'=>'author.','prefix'=>'author', 'namespace'=>'Author', 'middleware'=>['auth','author']], function (){
-    Route::get('/dashboard','DashboardController@index')->name('dashboard');
-});
+/*
+|--------------------------------------------------------------------------
+| Admin Routes End
+|--------------------------------------------------------------------------
+*/
 
-
-//Logo resmi için route oluşturuldu. farklı resim eklemeler için de yapılması gerekiyor.
+/*
+|--------------------------------------------------------------------------
+| Logo Routes Start
+|--------------------------------------------------------------------------
+*/
 
 Route::get('storage/{filename}', function ($filename)
 {
@@ -63,3 +74,9 @@ Route::get('storage/{filename}', function ($filename)
 
     return $response;
 });
+
+/*
+|--------------------------------------------------------------------------
+| Logo Routes End
+|--------------------------------------------------------------------------
+*/
