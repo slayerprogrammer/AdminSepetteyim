@@ -45,6 +45,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
     Route::resource('setting','SettingController');
 });
 
+
+Route::group(['as'=>'author.','prefix'=>'author', 'namespace'=>'Author', 'middleware'=>['auth','author']], function (){
+    Route::get('/dashboard','DashboardController@index')->name('dashboard');
+});
 /*
 |--------------------------------------------------------------------------
 | Admin Routes End
