@@ -21,7 +21,7 @@
                                         <label class="col-form-label">Logo Resmi</label>
                                     </div>
                                 <div class="input-group col-lg-6">
-                                    <img src="/storage/{{$settings->logo}}">
+                                    <img width="100px" height="100px" src="/storage/{{$settings->logo}}">
                                 </div>
                                 </div>
                             <div class="form-group row">
