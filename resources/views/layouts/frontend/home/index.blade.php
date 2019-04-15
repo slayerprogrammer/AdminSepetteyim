@@ -1,6 +1,7 @@
 @extends('layouts.frontend.partial.blank')
 @section('title','Ana Sayfa')
 @section('content')
+
 <!-- slider Area Start -->
 <div class="slider-area">
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,10 +12,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $settings=Setting::first();
+        return view('layouts.frontend.home.index', compact('settings'));
     }
 }

@@ -4,18 +4,17 @@
             <div class="row">
                 <div class="col-md-6 hidden-xs">
                     <div class="header-top-message pull-left">
-                        <span><i class="fa fa-envelope"></i>info@guvenmucevherat.com</span>
-                        <span><i class="fa fa-phone"></i>0312 312 61 03</span>
+                        <span><i class="fa fa-envelope"></i>{{$settings->mail}}</span>
+                        <span><i class="fa fa-phone"></i>{{$settings->phone}}</span>
                     </div>
                 </div>
                 <div class="col-md-6">
 
                     <div class="header-top-menu pull-right">
                         <ul class="nav-menu">
-                            <li><a target="_blank" title="Facebook" href="https://www.facebook.com/guven.mucevherat" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
-                            <li><a target="_blank" title="Instagram" href="https://www.instagram.com/guvenmucevherat" class="instagram social-icon"><i class="fa fa-instagram"></i></a></li>
-                            <li><a target="_blank" title="Whatsapp" href="https://wa.me/905326511114" class="whatsapp social-icon"><i
-                                            class="fa fa-whatsapp"></i></a></li>
+                            <li><a target="_blank" title="Facebook" href="{{$settings->facebook}}" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" title="Instagram" href="{{$settings->instagram}}" class="instagram social-icon"><i class="fa fa-instagram"></i></a></li>
+                            <li><a target="_blank" title="Whatsapp" href="{{$settings->whatsapp}}" class="whatsapp social-icon"><i class="fa fa-whatsapp"></i></a></li>
 
                             <li><a href="#">Dil Seçeneği</a>
                                 <div class="ht-menu-down">
@@ -38,7 +37,7 @@
                 <div class="col-md-1 col-sm-2 col-xs-6">
                     <div class="header-logo">
                         <a href="/">
-                            <img class="logo" src="{{asset("assets/frontend/img/logos.png")}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
+                            <img class="logo" src="/storage/{{$settings->logo}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
                         </a>
                     </div>
                 </div>

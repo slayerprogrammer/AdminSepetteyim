@@ -6,9 +6,8 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('layouts.frontend.home.index');
-});
+Route::get('/', 'HomeController@index')->name('index');
+
 Route::get('/about', function () {
    return view('layouts.frontend.about.index');
 });

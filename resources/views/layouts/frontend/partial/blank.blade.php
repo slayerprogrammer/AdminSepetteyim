@@ -9,31 +9,30 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Sepetteyim Grup Bilişim') }} - @yield('title')</title>
-    <meta name="keywords" content="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
-    <meta name="description" content="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
+    <meta name="keywords" content="{{$settings->keyword}}">
+    <meta name="description" content="{{$settings->description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="yandex-verification" content="8deb8c863cc1e13b" />
-    <link rel="alternate" hreflang="tr" href="index.html" />
 
-    <meta property="og:url" content="index.html" />
+    <meta property="og:url" content="/about" />
     <meta property="og:title" content="Güven Kuyumculuk Mücevherat || Güveniniz Altından Kıymetlidir" />
-    <meta property="og:description" content="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik" />
-    <meta property="og:image" content="img/logos.png" />
+    <meta property="og:description" content="{{$settings->description}}" />
+    <meta property="og:image" content="/storage/{{$settings->logo}}" />
 
-    <meta name="classification" content="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
+    <meta name="classification" content="{{$settings->description}}">
     <meta name="distribution" content="Global">
     <meta name="rating" content="All">
     <meta name="revisit-after" content="7 days">
-    <meta http-equiv="reply-to" content="info@guvenmucevherat.com">
+    <meta http-equiv="reply-to" content="{{$settings->mail}}">
     <meta http-equiv="window-target" content="_top">
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="index.html" />
-    <meta property="og:title" content="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik" />
-    <meta property="og:description" content="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik" />
-    <link rel="canonical" href="index.html" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="index.html" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="index.html" />
+    <meta property="og:type" content="{{$settings->description}}" />
+    <meta property="og:url" content="/about" />
+    <meta property="og:title" content="{{$settings->keyword}}" />
+    <meta property="og:description" content="{{$settings->description}}" />
+    <link rel="canonical" href="/about" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Place favicon.ico in the root directory -->
