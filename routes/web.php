@@ -8,6 +8,8 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 
+Route::get('/contact','ContactController@show')->name('contact');
+
 Route::get('/about', function () {
    return view('layouts.frontend.about.index');
 });
@@ -20,9 +22,7 @@ Route::get('/diamond', function () {
 Route::get('/diamond-cutter', function () {
     return view('layouts.frontend.diamond-cutter.index');
 });
-Route::get('/contact', function () {
-    return view('layouts.frontend.contact.index');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +42,7 @@ Auth::routes();
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','admin']], function (){
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
     Route::resource('setting','SettingController');
+    Route::resource('contact', 'ContactController');
 });
 
 
