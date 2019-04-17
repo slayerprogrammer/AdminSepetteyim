@@ -8,7 +8,7 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/contact','ContactController@show')->name('contact');
+Route::get('/contact','ContactController@index')->name('contact');
 
 Route::get('/about', function () {
    return view('layouts.frontend.about.index');

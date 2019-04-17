@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#editors" aria-expanded="false" aria-controls="editors">
+            <a class="nav-link" href="{{route('admin.contact.index')}}">
                 <i class="mdi mdi-pencil-box-outline menu-icon"></i>
                 <span class="menu-title">İletişim</span>
 

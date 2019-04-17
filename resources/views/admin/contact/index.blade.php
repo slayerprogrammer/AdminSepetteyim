@@ -1,6 +1,6 @@
 @extends('layouts.backend.admin')
 
-@section('title','Ana Sayfa Ayarları')
+@section('title','İletişim Ayarları')
 
 @push('css')
 
@@ -13,97 +13,115 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Site Ayarları</h4>
-                            <form action="{{route('admin.setting.store')}}" method="POST" enctype="multipart/form-data">
+                            <h4 class="card-title">İletişim Ayarları</h4>
+                            <form action="{{route('admin.contact.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label class="col-form-label">Harita Linki</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control" value="{{isset ($contacts->maps) ? $contacts->maps : ''}}" maxlength="400" name="maps" id="defaultconfig-4" type="text" placeholder="https://www.google.com/maps/embed?">
+                                </div>
+                            </div>
+
                                 <div class="form-group row">
                                     <div class="col-lg-3">
-                                        <label class="col-form-label">Logo Resmi</label>
+                                        <label class="col-form-label">Adres Bilgileri</label>
                                     </div>
-                                <div class="input-group col-lg-6">
-                                    <img height="100px" src="/storage/{{$settings->logo}}">
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->address1) ? $contacts->address1 : ''}}" maxlength="210" name="address1" id="defaultconfig-4" type="text" placeholder="Adres Açıklaması..">
+                                    </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">2.Adres Bilgileri(isteğe bağlı şubeler)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->address2) ? $contacts->address2 : ''}}" maxlength="210" name="address2" id="defaultconfig-4" type="text" placeholder="Adres-2 Açıklaması..">
+                                    </div>
                                 </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Description</label>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">3.Adres Bilgileri(isteğe bağlı şubeler)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->address3) ? $contacts->address3 : ''}}" maxlength="210" name="address3" id="defaultconfig-4" type="text" placeholder="Adres-3 Açıklaması..">
+                                    </div>
                                 </div>
-                                <div class="col-lg-8">
-                                    <input class="form-control" value="{{isset ($settings->description) ? $settings->description : ''}}" maxlength="210" name="description" id="defaultconfig-4" type="text" placeholder="Site Açıklaması..">
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Telefon 1</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->phone1) ? $contacts->phone1 : ''}}" maxlength="210" name="phone1" id="defaultconfig-4" type="text" placeholder="Telefon Açıklaması..">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Keyword</label>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Telefon 2 (isteğe bağlı)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->phone2) ? $contacts->phone2 : ''}}" maxlength="210" name="phone2" id="defaultconfig-4" type="text" placeholder="Telefon 2 Açıklaması..">
+                                    </div>
                                 </div>
-                                <div class="col-lg-8">
-                                    <input class="form-control" value="{{isset ($settings->keyword) ? $settings->keyword : ''}}" maxlength="210" name="keyword" id="defaultconfig-2" type="text" placeholder="Site Kelimeleri..">
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Telefon 3 (isteğe bağlı)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->phone3) ? $contacts->phone3 : ''}}" maxlength="210" name="phone3" id="defaultconfig-4" type="text" placeholder="Telefon 3 Açıklaması..">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Email</label>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Cep Telefon</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->mobile1) ? $contacts->mobile1 : ''}}" maxlength="210" name="mobile1" id="defaultconfig-4" type="text" placeholder="Cep Telefon Açıklaması..">
+                                    </div>
                                 </div>
-                                <div class="col-lg-8">
-                                    <input id="cemail" value="{{isset ($settings->mail) ? $settings->mail : ''}}" class="form-control" type="email" name="mail" required="" placeholder="Kurumsal Email Adresi..">
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Cep Telefon 2 (isteğe bağlı)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->mobile2) ? $contacts->mobile2 : ''}}" maxlength="210" name="mobile2" id="defaultconfig-4" type="text" placeholder="Cep Telefon 2 Açıklaması..">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Telefon</label>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Cep Telefon 3 (isteğe bağlı)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->mobile3) ? $contacts->mobile3 : ''}}" maxlength="210" name="mobile3" id="defaultconfig-4" type="text" placeholder="Cep Telefon 3 Açıklaması..">
+                                    </div>
                                 </div>
-                                <div class="col-lg-8">
-                                    <input id="phone" value="{{isset ($settings->phone) ? $settings->phone : ''}}" class="form-control" type="number" name="phone" required="" placeholder="Kurumsal Telefon Numarası..">
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Kurumsal Mail</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->mail1) ? $contacts->mail1 : ''}}" maxlength="210" name="mail1" id="defaultconfig-4" type="email" placeholder="Mail Açıklaması..">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Fax</label>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Kurumsal Mail 2 (isteğe bağlı)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->mail2) ? $contacts->mail2 : ''}}" maxlength="210" name="mail2" id="defaultconfig-4" type="email" placeholder="Mail 2 Açıklaması..">
+                                    </div>
                                 </div>
-                                <div class="col-lg-8">
-                                    <input id="fax" value="{{isset ($settings->fax) ? $settings->fax : ''}}" class="form-control" type="number" name="fax" required="" placeholder="Kurumsal Fax Numarası..">
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Kurumsal Mail 3 (isteğe bağlı)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->mail3) ? $contacts->mail3 : ''}}" maxlength="210" name="mail3" id="defaultconfig-4" type="email" placeholder="Mail 3 Açıklaması..">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Cep Telefonu</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input id="mobilephone" value="{{isset ($settings->mobilephone) ? $settings->mobilephone : ''}}" class="form-control" type="number" name="mobilephone" required="" placeholder="Kurumsal Cep Telefonu..">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Whatsapp Linki</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input id="whatsapp" value="{{isset ($settings->whatsapp) ? $settings->whatsapp : ''}}" class="form-control" type="url" name="whatsapp" required="" placeholder="Kurumsal Whatsapp Adresi..">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">İnstagram Linki</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input id="instagram" value="{{isset ($settings->instagram) ? $settings->instagram : ''}}" class="form-control" type="url" name="instagram" required="" placeholder="Kurumsal Instagram Adresi..">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Facebook Linki</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input id="facebook" value="{{isset ($settings->facebook) ? $settings->facebook : ''}}" class="form-control" type="url" name="facebook" required="" placeholder="Kurumsal Facebook Adresi..">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3">
-                                    <label class="col-form-label">Logo Yükle</label>
-                                </div>
-                                <div class="input-group col-lg-2">
-                                    <input type="file" name="logo">
-                                </div>
-                            </div>
+
                             <button type="submit" value="Submit" class="btn btn-success btn-rounded btn-fw" onclick="showSwal('success-message')">Kaydet</button>
                             </form>
                         </div>
