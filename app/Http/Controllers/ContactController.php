@@ -42,8 +42,10 @@ class ContactController extends Controller
         $message = new Message();
         $message->name = $request->get('name');
         $message->mail = $request->get('mail');
+        $message->phone = $request->get('phone');
         $message->message=$request->get('message');
         $message->save();
+        return redirect('/contact')->with('success', 'Information has been added');
     }
 
     /**
