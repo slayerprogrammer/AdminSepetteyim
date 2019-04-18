@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Setting;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,7 @@ class HomeController extends Controller
     public function index()
     {
         $settings=Setting::first();
-        return view('layouts.frontend.home.index', compact('settings'));
+        $contacts=Contact::first();
+        return view('layouts.frontend.home.index', compact('settings','contacts'));
     }
 }

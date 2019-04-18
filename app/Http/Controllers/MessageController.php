@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
-use App\Setting;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class ContactController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts=Contact::first();
-        $settings=Setting::first();
-        return view('layouts.frontend.contact.index', compact('contacts', 'settings'));
+
     }
 
     /**
@@ -48,9 +43,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-
+        //
     }
 
     /**

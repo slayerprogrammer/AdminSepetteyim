@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 map-area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.005555888801!2d32.85603346451635!3d39.941265392344015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34e60d851611b%3A0xdb81da4ee5c4ffe1!2zS8O2a2zDvCBLdXl1bWN1bGFyIMOHYXLFn8Sxc8Sx!5e0!3m2!1str!2str!4v1543004549003" width="100%" height="480px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    <iframe src="https://www.google.com/maps/embed?{{$contacts->maps}}" width="100%" height="480px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
                 </div>
                 <div class="contact-form-area">
 
@@ -46,11 +46,11 @@
 
                             <div class="info">
                                 <h3>MERKEZ İLETİŞİM</h3>
-                                <p><b>Adres:</b> Anafartalar Cad. Köklü Çarşısı No:14/9 Ulus/ANKARA
+                                <p><b>Adres:</b> {{$contacts->address1}}
                                 </p>
-                                <p><b>Telefon:</b> 0 (312) 312 61 03</p>
-                                <p><b>Telefon-2:</b> 0 (312) 324 55 48</p>
-                                <p><b>Email:</b> info@guvenkuyumculuk.com</p>
+                                <p><b>Telefon:</b>{{$contacts->phone1}}</p>
+                                <p><b>Telefon-2:</b>{{$contacts->mobile1}}</p>
+                                <p><b>Email:</b>{{$contacts->mail1}}</p>
 
                             </div>
                         </div>
@@ -62,11 +62,11 @@
 
                             <div class="info">
                                 <h3>ŞUBE-1 İLETİŞİM</h3>
-                                <p><b>Adres:</b> Anafartalar Cad. Talas Çarşısı No:20/B Ulus/ANKARA
+                                <p><b>Adres:</b> {{$contacts->address2}}
                                 </p>
-                                <p><b>Telefon:</b> 0 (312) 312 61 03</p>
-                                <p><b>Telefon-2:</b> 0 (312) 310 97 79</p>
-                                <p><b>Email:</b> sube1@guvenkuyumculuk.com</p>
+                                <p><b>Telefon:</b>{{$contacts->phone2}}</p>
+                                <p><b>Telefon-2:</b>{{$contacts->mobile2}}</p>
+                                <p><b>Email:</b>{{$contacts->mail2}}</p>
                             </div>
                         </div>
                     </div>
@@ -77,11 +77,11 @@
 
                             <div class="info">
                                 <h3>ŞUBE-2 İLETİŞİM</h3>
-                                <p><b>Adres:</b> Değirmendere Caddesi No:46/4 Şentepe/ANKARA
+                                <p><b>Adres:</b> {{$contacts->address3}}
                                 </p>
-                                <p><b>Telefon:</b> 0 (312) 312 61 03</p>
-                                <p><b>Telefon-2:</b> 0 (312) 330 92 43</p>
-                                <p><b>Email:</b> sube2@guvenkuyumculuk.com</p>
+                                <p><b>Telefon:</b>{{$contacts->phone3}}</p>
+                                <p><b>Telefon-2:</b>{{$contacts->mobile3}}</p>
+                                <p><b>Email:</b>{{$contacts->mail3}}</p>
                             </div>
                         </div>
                     </div>

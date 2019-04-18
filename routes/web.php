@@ -43,6 +43,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
     Route::resource('setting','SettingController');
     Route::resource('contact', 'ContactController');
+    Route::resource('message', 'MessageController');
 });
 
 

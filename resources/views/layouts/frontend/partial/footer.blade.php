@@ -5,24 +5,24 @@
         <div class="col-md-3 col-sm-6">
             <div class="footer-left">
                 <a href="index.html">
-                    <img src="{{asset("assets/frontend/img/logos.png")}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
+                    <img src="/storage/{{$settings->logo}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
                 </a>
                 <p>Müşteri temsilcilerimiz ile telefonda görüşerek, ürün hakkında bilgi alabilir, yeni sipariş verebilirsiniz.
                 </p>
                 <div class="social-icon">
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/guven.mucevherat">
+                            <a href="{{$settings->facebook}}">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/guvenmucevherat">
+                            <a href="{{$settings->instagram}}">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://wa.me/905326511114">
+                            <a href="{{$settings->whatsapp}}">
                                 <i class="fa fa-whatsapp"></i>
                             </a>
                         </li>
@@ -40,13 +40,13 @@
                         <p><span><b>Adres:</b> </span> Anafartalar Cad. Köklü Çarşısı No:14/9 <br>Ulus/ANKARA</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon:</b></span> 0 (312) 312 61 03</p>
+                        <p><span><b>Telefon:</b></span>{{$contacts->phone1}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon-2:</b></span> 0 (312) 324 55 48</p>
+                        <p><span><b>Telefon-2:</b></span>{{$contacts->mobile1}}</p>
                     </li>
                     <li>
-                        <p><span> <b>Email:</b> </span> info@guvenkuyumculuk.com</p>
+                        <p><span> <b>Email:</b> </span>{{$contacts->mail1}}</p>
                     </li>
                 </ul>
             </div>
@@ -63,13 +63,13 @@
                         <p><span><b>Adres:</b> </span> Anafartalar Cad. Talas Çarşısı No:20/B <br>Ulus/ANKARA</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon:</b></span> 0 (312) 312 61 03</p>
+                        <p><span><b>Telefon:</b></span>{{$contacts->phone2}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon 2:</b></span> 0 (312) 310 97 79</p>
+                        <p><span><b>Telefon 2:</b></span>{{$contacts->mobile2}}</p>
                     </li>
                     <li>
-                        <p><span> <b>Email:</b> </span> sube1@guvenkuyumculuk.com</p>
+                        <p><span> <b>Email:</b> </span>{{$contacts->mail2}}</p>
                     </li>
                 </ul>
             </div>
@@ -87,13 +87,13 @@
                         <p><span><b>Adres:</b> </span> Değirmendere Cad. No:46/4 <br>Şentepe/ANKARA</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon:</b></span> 0 (312) 312 61 03</p>
+                        <p><span><b>Telefon:</b></span>{{$contacts->phone3}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon 2:</b></span> 0 (312) 330 92 43</p>
+                        <p><span><b>Telefon 2:</b></span> {{$contacts->mobile3}}</p>
                     </li>
                     <li>
-                        <p><span> <b>Email:</b> </span> sube2@guvenkuyumculuk.com</p>
+                        <p><span> <b>Email:</b> </span>{{$contacts->mail3}}</p>
                     </li>
                 </ul>
             </div>
