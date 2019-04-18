@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Message;
 use App\Setting;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -39,7 +39,11 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = new Message();
+        $message->name = $request->get('name');
+        $message->mail = $request->get('mail');
+        $message->message=$request->get('message');
+        $message->save();
     }
 
     /**

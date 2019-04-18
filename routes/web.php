@@ -8,7 +8,8 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/contact','ContactController@index')->name('contact');
+Route::get('/contact','ContactController@index')->name('contact.get');
+Route::post('/contact','ContactController@store')->name('contact.post');
 
 Route::get('/about', function () {
    return view('layouts.frontend.about.index');
@@ -43,7 +44,6 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
     Route::resource('setting','SettingController');
     Route::resource('contact', 'ContactController');
-    Route::resource('message', 'MessageController');
 });
 
 

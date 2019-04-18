@@ -8,6 +8,8 @@
                 <div class="col-md-6 map-area">
                     <iframe src="https://www.google.com/maps/embed?{{isset ($contacts->maps1) ? $contacts->maps1 : ''}}" width="100%" height="480px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
                 </div>
+                <form action="{{route('contact.post')}}" method="POST">
+                    {{ csrf_field() }}
                 <div class="contact-form-area">
 
                     <div class="about-title">
@@ -17,7 +19,7 @@
                     <div class="col-md-6">
                         <div class="contact-form-left">
                             <input type="text" placeholder="Ad Soyad" name="name" id="name">
-                            <input type="email" placeholder="Mail Adresiniz" name="email" id="email">
+                            <input type="email" placeholder="Mail Adresiniz" name="mail" id="mail">
                             <input type="text" placeholder="Telefon Numaranız" name="phone" id="phone">
                         </div>
                     </div>
@@ -31,6 +33,7 @@
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
