@@ -9,27 +9,27 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Sepetteyim Grup Bilişim') }} - @yield('title')</title>
-    <meta name="keywords" content="{{$settings->keyword}}">
-    <meta name="description" content="{{$settings->description}}">
+    <meta name="keywords" content="{{isset ($settings->keyword) ? $settings->keyword : ''}}">
+    <meta name="description" content="{{isset ($settings->description) ? $settings->description : ''}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="yandex-verification" content="8deb8c863cc1e13b" />
 
     <meta property="og:url" content="/about" />
     <meta property="og:title" content="Güven Kuyumculuk Mücevherat || Güveniniz Altından Kıymetlidir" />
-    <meta property="og:description" content="{{$settings->description}}" />
+    <meta property="og:description" content="{{isset ($settings->description) ? $settings->description : ''}}" />
     <meta property="og:image" content="/storage/{{$settings->logo}}" />
 
-    <meta name="classification" content="{{$settings->description}}">
+    <meta name="classification" content="{{isset ($settings->description) ? $settings->description : ''}}">
     <meta name="distribution" content="Global">
     <meta name="rating" content="All">
     <meta name="revisit-after" content="7 days">
-    <meta http-equiv="reply-to" content="{{$settings->mail}}">
+    <meta http-equiv="reply-to" content="{{isset ($settings->mail) ? $settings->mail : ''}}">
     <meta http-equiv="window-target" content="_top">
-    <meta property="og:type" content="{{$settings->description}}" />
+    <meta property="og:type" content="{{isset ($settings->description) ? $settings->description : ''}}" />
     <meta property="og:url" content="/about" />
-    <meta property="og:title" content="{{$settings->keyword}}" />
-    <meta property="og:description" content="{{$settings->description}}" />
+    <meta property="og:title" content="{{isset ($settings->keyword) ? $settings->keyword : ''}}" />
+    <meta property="og:description" content="{{isset ($settings->description) ? $settings->description : ''}}" />
     <link rel="canonical" href="/about" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />

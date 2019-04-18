@@ -12,17 +12,17 @@
                 <div class="social-icon">
                     <ul>
                         <li>
-                            <a href="{{$settings->facebook}}">
+                            <a href="{{isset ($settings->facebook) ? $settings->facebook : ''}}">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="{{$settings->instagram}}">
+                            <a href="{{isset ($settings->instagram) ? $settings->instagram : ''}}">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="{{$settings->whatsapp}}">
+                            <a href="{{isset ($settings->whatsapp) ? $settings->whatsapp : ''}}">
                                 <i class="fa fa-whatsapp"></i>
                             </a>
                         </li>
@@ -37,21 +37,21 @@
                 <h2 class="footer-w-title"><b>MERKEZ İLETİŞİM</b></h2>
                 <ul class="footer-list">
                     <li>
-                        <p><span><b>Adres:</b> </span> Anafartalar Cad. Köklü Çarşısı No:14/9 <br>Ulus/ANKARA</p>
+                        <p><span><b>Adres:</b> </span> {{isset ($contacts->address1) ? $contacts->address1 : ''}} <br>{{isset ($contacts->city1) ? $contacts->city1 : ''}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon:</b></span>{{$contacts->phone1}}</p>
+                        <p><span><b>Telefon:</b></span>{{isset ($contacts->phone1) ? $contacts->phone1 : ''}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon-2:</b></span>{{$contacts->mobile1}}</p>
+                        <p><span><b>Telefon-2:</b></span>{{isset ($contacts->mobile1) ? $contacts->mobile1 : ''}}</p>
                     </li>
                     <li>
-                        <p><span> <b>Email:</b> </span>{{$contacts->mail1}}</p>
+                        <p><span> <b>Email:</b> </span>{{isset ($contacts->mail1) ? $contacts->mail1 : ''}}</p>
                     </li>
                 </ul>
             </div>
             <div class="map-area">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.005555888801!2d32.85603346451635!3d39.941265392344015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34e60d851611b%3A0xdb81da4ee5c4ffe1!2zS8O2a2zDvCBLdXl1bWN1bGFyIMOHYXLFn8Sxc8Sx!5e0!3m2!1str!2str!4v1543004549003"
+                <iframe src="https://www.google.com/maps/embed?{{isset ($contacts->maps1) ? $contacts->maps1 : ''}}"
                         width="100%" height="180px" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
@@ -60,23 +60,22 @@
                 <h2 class="footer-w-title"><b>ŞUBE-1 İLETİŞİM</b></h2>
                 <ul class="footer-list">
                     <li>
-                        <p><span><b>Adres:</b> </span> Anafartalar Cad. Talas Çarşısı No:20/B <br>Ulus/ANKARA</p>
+                        <p><span><b>Adres:</b> </span> {{isset ($contacts->address2) ? $contacts->address2 : ''}} <br>{{isset ($contacts->city2) ? $contacts->city2 : ''}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon:</b></span>{{$contacts->phone2}}</p>
+                        <p><span><b>Telefon:</b></span>{{isset ($contacts->phone1) ? $contacts->phone2 : ''}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon 2:</b></span>{{$contacts->mobile2}}</p>
+                        <p><span><b>Telefon-2:</b></span>{{isset ($contacts->mobile1) ? $contacts->mobile2 : ''}}</p>
                     </li>
                     <li>
-                        <p><span> <b>Email:</b> </span>{{$contacts->mail2}}</p>
+                        <p><span> <b>Email:</b> </span>{{isset ($contacts->mail2) ? $contacts->mail2 : ''}}</p>
                     </li>
                 </ul>
             </div>
             <div class="map-area">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.1155882031144!2d32.85723241451625!3d39.93880409249222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34e60d756730b%3A0xc980c761042639f1!2zVGFsYXMgS3V5dW1jdWxhciDDh2FyxZ_EsXPEsQ!5e0!3m2!1str!2str!4v1543004827002"
+                <iframe src="https://www.google.com/maps/embed?{{isset ($contacts->maps2) ? $contacts->maps2 : ''}}"
                         width="100%" height="180px" frameborder="0" style="border:0" allowfullscreen></iframe>
-
             </div>
         </div>
         <div class="col-md-3 col-sm-6">
@@ -84,21 +83,21 @@
                 <h2 class="footer-w-title"><b>ŞUBE-2 İLETİŞİM</b></h2>
                 <ul class="footer-list">
                     <li>
-                        <p><span><b>Adres:</b> </span> Değirmendere Cad. No:46/4 <br>Şentepe/ANKARA</p>
+                        <p><span><b>Adres:</b> </span> {{isset ($contacts->address3) ? $contacts->address3 : ''}} <br>{{isset ($contacts->city3) ? $contacts->city3 : ''}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon:</b></span>{{$contacts->phone3}}</p>
+                        <p><span><b>Telefon:</b></span>{{isset ($contacts->phone3) ? $contacts->phone3 : ''}}</p>
                     </li>
                     <li>
-                        <p><span><b>Telefon 2:</b></span> {{$contacts->mobile3}}</p>
+                        <p><span><b>Telefon-2:</b></span>{{isset ($contacts->mobile3) ? $contacts->mobile3 : ''}}</p>
                     </li>
                     <li>
-                        <p><span> <b>Email:</b> </span>{{$contacts->mail3}}</p>
+                        <p><span> <b>Email:</b> </span>{{isset ($contacts->mail3) ? $contacts->mail3 : ''}}</p>
                     </li>
                 </ul>
             </div>
             <div class="map-area">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.7555094366207!2d32.79988308579121!3d39.99156875992878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34bf24e1cf151%3A0x95b5f158028b7479!2sDe%C4%9Firmendere+Cd.%2C+Ankara!5e0!3m2!1str!2str!4v1543253233387"
+                <iframe src="https://www.google.com/maps/embed?{{isset ($contacts->maps3) ? $contacts->maps3 : ''}}"
                         width="100%" height="180px" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>

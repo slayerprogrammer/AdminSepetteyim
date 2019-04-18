@@ -34,10 +34,15 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $contact =  Contact::findOrCreate(1);
-        $contact->maps=$request->get('maps');
+        $contact->maps1=$request->get('maps1');
+        $contact->maps2=$request->get('maps2');
+        $contact->maps3=$request->get('maps3');
         $contact->address1=$request->get('address1');
         $contact->address2=$request->get('address2');
         $contact->address3=$request->get('address3');
+        $contact->city1=$request->get('city1');
+        $contact->city2=$request->get('city2');
+        $contact->city3=$request->get('city3');
         $contact->phone1=$request->get('phone1');
         $contact->phone2=$request->get('phone2');
         $contact->phone3=$request->get('phone3');

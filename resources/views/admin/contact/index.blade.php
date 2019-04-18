@@ -21,9 +21,27 @@
                                     <label class="col-form-label">Harita Linki</label>
                                 </div>
                                 <div class="col-lg-8">
-                                    <input class="form-control" value="{{isset ($contacts->maps) ? $contacts->maps : ''}}" maxlength="400" name="maps" id="defaultconfig-4" type="text" placeholder="https://www.google.com/maps/embed?">
+                                    <input class="form-control" value="{{isset ($contacts->maps1) ? $contacts->maps1 : ''}}" maxlength="400" name="maps1" id="defaultconfig-4" type="text" placeholder="https://www.google.com/maps/embed?">
                                 </div>
                             </div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Harita Linki 2 (isteğe bağlı şubeler)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->maps2) ? $contacts->maps2 : ''}}" maxlength="400" name="maps2" id="defaultconfig-4" type="text" placeholder="https://www.google.com/maps/embed?">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Harita Linki 3 (isteğe bağlı şubeler)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->maps3) ? $contacts->maps3 : ''}}" maxlength="400" name="maps3" id="defaultconfig-4" type="text" placeholder="https://www.google.com/maps/embed?">
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <div class="col-lg-3">
@@ -35,10 +53,26 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3">
-                                        <label class="col-form-label">2.Adres Bilgileri(isteğe bağlı şubeler)</label>
+                                        <label class="col-form-label">Şehir/İlçe</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->city1) ? $contacts->city1 : ''}}" maxlength="210" name="city1" id="defaultconfig-4" type="text" placeholder="Ankara/Yenimahalle">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">2.Adres Bilgileri (isteğe bağlı şubeler)</label>
                                     </div>
                                     <div class="col-lg-8">
                                         <input class="form-control" value="{{isset ($contacts->address2) ? $contacts->address2 : ''}}" maxlength="210" name="address2" id="defaultconfig-4" type="text" placeholder="Adres-2 Açıklaması..">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Şehir/İlçe 2 (isteğe bağlı şubeler)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->city2) ? $contacts->city2 : ''}}" maxlength="210" name="city2" id="defaultconfig-4" type="text" placeholder="Ankara/Yenimahalle">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -47,6 +81,14 @@
                                     </div>
                                     <div class="col-lg-8">
                                         <input class="form-control" value="{{isset ($contacts->address3) ? $contacts->address3 : ''}}" maxlength="210" name="address3" id="defaultconfig-4" type="text" placeholder="Adres-3 Açıklaması..">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Şehir/İlçe 3 (isteğe bağlı şubeler)</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" value="{{isset ($contacts->city3) ? $contacts->city3 : ''}}" maxlength="210" name="city3" id="defaultconfig-4" type="text" placeholder="Ankara/Yenimahalle">
                                     </div>
                                 </div>
                                 <div class="form-group row">
