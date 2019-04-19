@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Contact;
+use App\Message;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -65,7 +66,8 @@ class ContactController extends Controller
      */
     public function show()
     {
-
+        $messages=Message::all();
+        return view('admin.contact.show', compact('messages'));
     }
 
     /**

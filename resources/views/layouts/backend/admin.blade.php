@@ -60,7 +60,9 @@
     <!-- Custom js for this page-->
     <script src="{{asset("assets/backend/js/dashboard.js")}}"></script>
     <script src="{{asset("assets/backend/js/bt-maxLength.js")}}"></script>
-<script src="{{asset("assets/backend/js/file-upload.js")}}"></script>
+    <script src="{{asset("assets/backend/js/file-upload.js")}}"></script>
+    <script src="{{asset("assets/backend/js/data-table.js")}}"></script>
+
 
 @stack('customJs')
 <!-- End custom js for this page-->
