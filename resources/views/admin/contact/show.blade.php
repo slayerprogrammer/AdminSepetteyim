@@ -28,7 +28,8 @@
                                                                 <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 117px;">ID</th>
                                                                 <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Adı Soyadı</th>
                                                                 <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 145px;">Telefon</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 111px;">Mail Adresi</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 145px;">Mail Adresi</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 111px;">İçerik</th>
                                                                 <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Base Price: activate to sort column ascending" style="width: 150px;">Kayıt Tarihi</th>
                                                                 </thead>
                                                             <tbody>
@@ -37,6 +38,7 @@
                                                                 <td class="sorting_1">{{$message->id}}</td>
                                                                 <td>{{$message->name}}</td>
                                                                 <td>{{$message->phone}}</td>
+                                                                <td>{{$message->mail}}</td>
                                                                 <td>{{$message->message}}</td>
                                                                 <td>{{$message->created_at}}</td>
                                                             </tr>

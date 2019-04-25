@@ -18,7 +18,7 @@
     <meta property="og:url" content="/about" />
     <meta property="og:title" content="Güven Kuyumculuk Mücevherat || Güveniniz Altından Kıymetlidir" />
     <meta property="og:description" content="{{isset ($settings->description) ? $settings->description : ''}}" />
-    <meta property="og:image" content="/storage/{{$settings->logo}}" />
+    <meta property="og:image" content="/storage/{{isset ($settings->logo) ? $settings->logo: ''}}" />
 
     <meta name="classification" content="{{isset ($settings->description) ? $settings->description : ''}}">
     <meta name="distribution" content="Global">

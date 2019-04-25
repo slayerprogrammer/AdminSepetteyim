@@ -8,7 +8,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="breadcrumb-single">
                         <ul class="breadcrumbs">
-                            <li><a href="/about" title="Return to Home">
+                            <li><a href="/" title="Return to Home">
                                     Ana Sayfa
                                 </a></li>
                             <li>

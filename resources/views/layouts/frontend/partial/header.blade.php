@@ -37,7 +37,7 @@
                 <div class="col-md-1 col-sm-2 col-xs-6">
                     <div class="header-logo">
                         <a href="/">
-                            <img class="logo" src="/storage/{{$settings->logo}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
+                            <img class="logo" src="/storage/{{isset ($settings->logo) ? $settings->logo: ''}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
                         </a>
                     </div>
                 </div>

@@ -11,9 +11,8 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('/contact','ContactController@index')->name('contact.get');
 Route::post('/contact','ContactController@store')->name('contact.post');
 
-Route::get('/about', function () {
-   return view('layouts.frontend.about.index');
-});
+Route::get('/about', 'AboutController@index')->name('index');
+
 Route::get('/gold', function () {
     return view('layouts.frontend.gold.index');
 });

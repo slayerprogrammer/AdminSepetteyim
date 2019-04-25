@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables3" aria-expanded="false" aria-controls="tables3">
+            <a class="nav-link" href="" >
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Mesaj Kutusu</span>
             </a>
