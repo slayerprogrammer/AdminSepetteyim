@@ -13,6 +13,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            <a></a>
                             <h4 class="card-title">Mesajlar</h4>
                                 @csrf
                                 <div class="row">

@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\About;
-use App\Contact;
-use App\Setting;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class AboutController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $settings=Setting::first();
-        $contacts=Contact::first();
-        $abouts=About::first();
-        return view('layouts.frontend.about.index', compact('settings','contacts','abouts'));
+        return view('admin.category.index');
     }
 
     /**
@@ -29,7 +24,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
