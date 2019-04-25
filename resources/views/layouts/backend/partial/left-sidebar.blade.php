@@ -21,14 +21,14 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.contact.index')}}">
+            <a class="nav-link" href="{{route('admin.contact.create')}}">
                 <i class="mdi mdi-pencil-box-outline menu-icon"></i>
                 <span class="menu-title">İletişim</span>
 
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="" >
+            <a class="nav-link" href="{{route('admin.contact.index')}}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Mesaj Kutusu</span>
             </a>

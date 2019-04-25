@@ -11,9 +11,9 @@ class ContactController extends Controller
 {
     public function index()
     {
+        $messages=Message::all();
+        return view('admin.contact.show', compact('messages'));
 
-        $contacts=Contact::first();
-        return view('admin.contact.index', compact('contacts'));
     }
 
     /**
@@ -23,7 +23,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        $contacts=Contact::first();
+        return view('admin.contact.index', compact('contacts'));
     }
 
     /**
@@ -66,8 +67,7 @@ class ContactController extends Controller
      */
     public function show()
     {
-        $messages=Message::all();
-        return view('admin.contact.show', compact('messages'));
+
     }
 
     /**
