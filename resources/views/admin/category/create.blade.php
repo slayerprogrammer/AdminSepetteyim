@@ -13,8 +13,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Kategori Ekle</h4>
-                                <form action="{{route('admin.contact.store')}}" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row">
                                         <div class="col-lg-3">
