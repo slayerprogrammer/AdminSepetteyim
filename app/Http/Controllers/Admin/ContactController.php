@@ -56,7 +56,7 @@ class ContactController extends Controller
         $contact->mail3=$request->get('mail3');
         $contact->save();
 
-        return redirect('admin/contact')->with('success', 'Information has been added');
+        return redirect('admin/contact/create')->with('success', 'Information has been added');
     }
 
     /**
