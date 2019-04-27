@@ -15,7 +15,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $sliders = Slider::all();
+        return view('admin.slider.index', compact('sliders'));
+
     }
 
     /**
@@ -25,7 +27,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.slider.create');
     }
 
     /**
@@ -36,7 +38,7 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        $slider=Slider::all();
+        $slider= new Slider();
         if($request->hasFile('slider')){
             // Get filename with the extension
             $filenameWithExt = $request->file('slider')->getClientOriginalName();
@@ -48,14 +50,14 @@ class SliderController extends Controller
             $fileNameToStore=uniqid().'_'.time().'.'.$extension;
             // Upload Image
             $path = $request->file('slider')->storeAs('public/slider', $fileNameToStore);
-            $slider->logo = $fileNameToStore;
+            $slider->slider = $fileNameToStore;
         }
 
         $slider->keyword=$request->get('keyword');
-        $slider->title1=$request->get('keyword');
-        $slider->title2=$request->get('keyword');
-        $slider->title3=$request->get('keyword');
-        $slider->title4=$request->get('keyword');
+        $slider->title1=$request->get('title1');
+        $slider->title2=$request->get('title2');
+        $slider->title3=$request->get('title3');
+        $slider->title4=$request->get('title4');
 
         $slider->save();
 

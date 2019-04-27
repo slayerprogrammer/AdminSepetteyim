@@ -44,6 +44,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
     Route::resource('setting','SettingController');
     Route::resource('contact', 'ContactController');
     Route::resource('category','CategoryController');
+    Route::resource('slider','SliderController');
 });
 
 
@@ -85,3 +86,21 @@ Route::get('storage/{filename}', function ($filename)
 | Logo Routes End
 |--------------------------------------------------------------------------
 */
+
+Route::get('storage/{filename}', function ($filename)
+{
+
+    $path = storage_path('app/public/slider/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
