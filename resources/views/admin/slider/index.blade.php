@@ -40,7 +40,7 @@
                                                         @foreach ($sliders as $slider)
                                                             <tr role="row" class="even">
                                                                 <td class="sorting_1">{{isset ($slider->id) ? $slider->id: ''}}</td>
-                                                                <td><img height="100px" src="/storage/{{isset ($slider->slider) ? $slider->slider: ''}}"></td>
+                                                                <td><img height="100px" src="/storage/slider/{{isset ($slider->slider) ? $slider->slider: ''}}"></td>
                                                                 <td>{{isset ($slider->keyword) ? $slider->keyword: ''}}</td>
                                                                 <td>{{isset ($slider->title1) ? $slider->title1: ''}}</td>
                                                                 <td>{{isset ($slider->title2) ? $slider->title2: ''}}</td>

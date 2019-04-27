@@ -5,7 +5,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="footer-left">
                 <a href="/">
-                    <img src="/storage/{{isset ($settings->logo) ? $settings->logo: ''}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
+                    <img src="/storage/logo/{{isset ($settings->logo) ? $settings->logo: ''}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik">
                 </a>
                 <p>Müşteri temsilcilerimiz ile telefonda görüşerek, ürün hakkında bilgi alabilir, yeni sipariş verebilirsiniz.
                 </p>

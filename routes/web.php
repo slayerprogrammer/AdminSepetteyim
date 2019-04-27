@@ -63,7 +63,7 @@ Route::group(['as'=>'author.','prefix'=>'author', 'namespace'=>'Author', 'middle
 |--------------------------------------------------------------------------
 */
 
-Route::get('storage/{filename}', function ($filename)
+Route::get('storage/logo/{filename}', function ($filename)
 {
 
     $path = storage_path('app/public/logo/' . $filename);
@@ -86,8 +86,7 @@ Route::get('storage/{filename}', function ($filename)
 | Logo Routes End
 |--------------------------------------------------------------------------
 */
-
-Route::get('storage/{filename}', function ($filename)
+Route::get('storage/slider/{filename}', function ($filename)
 {
 
     $path = storage_path('app/public/slider/' . $filename);

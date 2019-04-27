@@ -7,26 +7,28 @@
 
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">
-                <img src="{{asset("assets/frontend/img/slider/guven-mucevherat-ankara.jpg")}}" alt="Ankara Kuyumcu, Ankaradaki kuyumcular, Güven Mücevherat, Güven Kuyumculuk, Ankara Altıncıları, Kuyumcu, Kuyumcular, Altın bilezik" title="#slider-direction-8" />
+                @foreach ($sliders as $slider)
+                <img src="/storage/slider/{{isset ($slider->slider) ? $slider->slider: ''}}" alt="{{isset ($slider->keyword) ? $slider->keyword: ''}}" title="#slider-direction-{{isset ($slider->id) ? $slider->id: ''}}" />
+                @endforeach
             </div>
-
-            <div id="slider-direction-8" class="t-cn slider-direction">
+            @foreach ($sliders as $slider)
+            <div id="slider-direction-{{isset ($slider->id) ? $slider->id: ''}}" class="t-cn slider-direction">
                 <div class="container slider-height">
                     <div class="row slider-height">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider-height">
                             <div class="slide-text">
                                 <div class="cap-title wow bounceInDown" data-wow-duration="0.9s" data-wow-delay="0s">
-                                    <h2><strong>EN İYİSİNİ<br />HAKEDİYORSUN</strong></h2>
+                                    <h2><strong>{{isset ($slider->title1) ? $slider->title1: ''}}<br />{{isset ($slider->title2) ? $slider->title2: ''}}</strong></h2>
                                 </div>
                                 <div class="cap-shop wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                    <h4><strong>Güven Kuyumculuk Mücevherat</strong><br />Sizler İçin</h4>
+                                    <h4><strong>{{isset ($slider->title3) ? $slider->title3: ''}}</strong><br />{{isset ($slider->title4) ? $slider->title4: ''}}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            @endforeach
 
 
 

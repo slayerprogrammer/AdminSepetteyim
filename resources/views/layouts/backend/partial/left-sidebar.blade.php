@@ -28,6 +28,33 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                <i class="mdi mdi-chart-pie menu-icon"></i>
+                <span class="menu-title">Üst ve Alt Slider</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">Üst Slider</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/charts/morris.html">Alt Slider</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
+                <i class="mdi mdi-layers menu-icon"></i>
+                <span class="menu-title">Ürün ve Kategoriler</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-advanced">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{route('admin.category.index')}}">Kategoriler</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dragula.html">Ürün Ekle</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/clipboard.html">Ürün Listele</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.contact.index')}}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Mesaj Kutusu</span>
@@ -59,32 +86,6 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                <i class="mdi mdi-chart-pie menu-icon"></i>
-                <span class="menu-title">Üst ve Alt Slider</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">Üst Slider</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/charts/morris.html">Alt Slider</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
-                <i class="mdi mdi-layers menu-icon"></i>
-                <span class="menu-title">Ürün ve Kategoriler</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-advanced">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{route('admin.category.index')}}">Kategoriler</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dragula.html">Ürün Ekle</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/clipboard.html">Ürün Listele</a></li>
-                </ul>
-            </div>
-        </li>
+
     </ul>
 </nav>

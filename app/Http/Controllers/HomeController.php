@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Setting;
+use App\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
     {
         $settings=Setting::first();
         $contacts=Contact::first();
-        return view('layouts.frontend.home.index', compact('settings','contacts'));
+        $sliders=Slider::all();
+        return view('layouts.frontend.home.index', compact('settings','contacts','sliders'));
     }
 }
