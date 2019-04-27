@@ -16,6 +16,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <a class="btn btn-primary btn-rounded btn-fw" href="{{route('admin.category.create')}}"> Kategori Ekle</a>
+
                                 <div class="col-sm-12">
                             @csrf
                             <div class="row">
