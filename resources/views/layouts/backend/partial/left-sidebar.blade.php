@@ -35,7 +35,7 @@
             </a>
             <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">Üst Slider</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('admin.slider.index')}}">Üst Slider</a></li>
                     <li class="nav-item"> <a class="nav-link" href="pages/charts/morris.html">Alt Slider</a></li>
                 </ul>
             </div>

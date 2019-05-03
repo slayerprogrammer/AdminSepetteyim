@@ -29,11 +29,11 @@
                                                         <tr role="row">
                                                             <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 117px;">ID</th>
                                                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Resim</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Alt Etiket</th>
                                                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Yazı 1</th>
                                                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Yazı 2</th>
                                                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Yazı 3</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Yazı 4</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">Yazı 3</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 193px;">İşlemler</th>
 
                                                         </thead>
                                                         <tbody>
@@ -41,11 +41,12 @@
                                                             <tr role="row" class="even">
                                                                 <td class="sorting_1">{{isset ($slider->id) ? $slider->id: ''}}</td>
                                                                 <td><img height="100px" src="/storage/slider/{{isset ($slider->slider) ? $slider->slider: ''}}"></td>
-                                                                <td>{{isset ($slider->keyword) ? $slider->keyword: ''}}</td>
+
                                                                 <td>{{isset ($slider->title1) ? $slider->title1: ''}}</td>
                                                                 <td>{{isset ($slider->title2) ? $slider->title2: ''}}</td>
                                                                 <td>{{isset ($slider->title3) ? $slider->title3: ''}}</td>
                                                                 <td>{{isset ($slider->title4) ? $slider->title4: ''}}</td>
+                                                                <td> <button class="btn btn-primary btn-rounded btn-fw"> Düzenle</button> | <button class="btn btn-primary btn-rounded btn-fw">Sil</button> </td>
 
                                                             </tr>
                                                         @endforeach
